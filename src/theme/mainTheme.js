@@ -1,9 +1,15 @@
 export const theme = {
-  primary: 'rgb(32, 33, 36)',
-  secondary: 'rgb(255, 255, 255)',
-  light: 300,
-  regular: 400,
-  bold: 700,
+  primary: 'rgb(26, 33, 47)',
+  secondary: 'rgb(196, 196, 196)',
+  orange: 'rgb(255, 114, 54)',
+  red: 'rgb(204, 0, 0)',
+  yellow: 'rgb(250, 197, 99)',
+  background: 'rgb(255, 254, 253)',
+  fontWeight: {
+    light: 300,
+    regular: 400,
+    bold: 700,
+  },
   fontSize: {
     xs: '1.2rem',
     s: '1.6rem',
