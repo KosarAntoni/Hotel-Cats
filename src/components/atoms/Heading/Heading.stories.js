@@ -8,3 +8,4 @@ export default {
 
 export const Normal = () => <Heading>Lorem ipsum</Heading>;
 export const Big = () => <Heading big>Lorem ipsum</Heading>;
+export const Small = () => <Heading small>Lorem ipsum</Heading>;

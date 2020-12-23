@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Checkbox = styled.input.attrs({ type: 'checkbox' })`
-				position: relative;
+	position: relative;
   height: 2rem;
   width: 2rem;
   -webkit-appearance: none;
@@ -29,10 +29,6 @@ const Checkbox = styled.input.attrs({ type: 'checkbox' })`
 		opacity: 0;
 		transition: all 0.3s;
 	}
-
-
-  :checked {
-  }
 
   :checked::before {
 		opacity: 1;
