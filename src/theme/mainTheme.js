@@ -1,6 +1,6 @@
 export const theme = {
   primary: 'rgb(26, 33, 47)',
-  secondary: 'rgb(196, 196, 196)',
+  secondary: 'rgb(132, 132, 132)',
   orange: 'rgb(255, 114, 54)',
   red: 'rgb(204, 0, 0)',
   yellow: 'rgb(250, 197, 99)',
@@ -11,7 +11,8 @@ export const theme = {
     bold: 700,
   },
   fontSize: {
-    xs: '1.2rem',
+    xxs: '1.2rem',
+    xs: '1.4rem',
     s: '1.6rem',
     m: '2.2rem',
     l: '3.6rem',

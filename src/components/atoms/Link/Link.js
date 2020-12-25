@@ -5,8 +5,8 @@ const Link = styled.a`
 	font-size: ${({ theme, big }) => (big ? theme.fontSize.m : theme.fontSize.s)};
 	font-weight: ${({ theme, big }) => big && theme.fontWeight.bold};
   color: ${({ theme }) => theme.primary};
-	padding: 0 0.5rem;
-	transition: all 0.3s ease;
+  padding: ${({ big }) => !big && '0 0.5rem'};
+  transition: all 0.3s ease;
   border-radius: ${({ big }) => !big && '1rem'};
 	border-bottom: ${({ big }) => big && '2px solid transparent'};
 

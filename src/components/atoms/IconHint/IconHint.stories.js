@@ -7,4 +7,4 @@ export default {
   content: IconHint,
 };
 
-export const Emthy = () => <IconHint icon={emptyRoom}>Empthy room</IconHint>;
+export const Empty = () => <IconHint icon={emptyRoom}>Empty room</IconHint>;

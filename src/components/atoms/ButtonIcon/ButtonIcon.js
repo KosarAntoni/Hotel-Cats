@@ -19,9 +19,9 @@ const ButtonIcon = styled.button`
   M7.6,17.1c0,4.5,6.2,5.1,5.7,0.2C12.9,13.4,7.6,12.8,7.6,17.1z 
   M23.6,11.5c-0.4-5.5-7-2.6-5.5,1.9 C19.5,16.9,23.9,14.7,23.6,11.5z 
   M17.2,12.2c0.2-3.1-4.1-5.4-5.5-2C10.2,14.7,16.7,17.8,17.2,12.2z' /%3E%3C/svg%3E");  
-	background-size: 25%;
+	background-size: 4rem;
   background-repeat: no-repeat;
-  background-position: center right 7.5%;
+  background-position: center right 1rem;
 	padding: 2rem 6rem 2rem 3rem;
 	border-radius: 10rem;
 	border: none;

@@ -4,10 +4,10 @@ const IconHint = styled.div`
 	display: flex;
 	justify-content: center;
 	position: relative;
-	height: 1.6rem;
-	width: 1.6rem;
+	height: 1.8rem;
+	width: 1.8rem;
   background-image: url(${({ icon }) => icon});
-  background-size: 50%;
+  background-size: 1.6rem;
   background-repeat: no-repeat;
   background-position: 50% 50%;
 	font-size: 0;
