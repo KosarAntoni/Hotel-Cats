@@ -8,3 +8,4 @@ export default {
 
 export const Normal = () => <Link href="https://www.google.pl/">Google.com</Link>;
 export const Big = () => <Link big href="https://www.google.pl/">Google.com</Link>;
+export const Small = () => <Link small href="https://www.google.pl/">Google.com</Link>;

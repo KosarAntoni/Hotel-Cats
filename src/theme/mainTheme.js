@@ -5,6 +5,7 @@ export const theme = {
   red: 'rgb(204, 0, 0)',
   yellow: 'rgb(250, 197, 99)',
   background: 'rgb(255, 254, 253)',
+  borderRadius: '8px',
   fontWeight: {
     light: 300,
     regular: 400,

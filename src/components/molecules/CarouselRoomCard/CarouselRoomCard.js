@@ -27,12 +27,12 @@ const Image = styled.img`
 	width: 100%;
 	height: 19rem;
 	object-fit: cover;
-	border-radius: 8px 8px 0 0;
-
+	border-radius: 	${({ theme }) => `${theme.borderRadius} ${theme.borderRadius} 0 0`};
+  
   @media screen and ${({ theme: { viewPorts } }) => viewPorts.viewport7} {
     width: 440px;
     height: 100%;
-		border-radius: 8px;
+    border-radius: ${({ theme }) => theme.borderRadius};
   }
 
   @media screen and ${({ theme: { viewPorts } }) => viewPorts.viewport12} {
@@ -47,7 +47,7 @@ const ContentWrapper = styled.div`
   padding: 2.5rem;
   background: ${({ theme }) => (theme.background)};
   box-shadow: 0 0 25px rgba(208, 208, 208, 0.25);
-  border-radius: 8px;
+  border-radius: ${({ theme }) => theme.borderRadius};
 
   @media screen and ${({ theme: { viewPorts } }) => viewPorts.viewport7} {
 		position: absolute;
@@ -111,7 +111,7 @@ const CarouselRoomCard = ({
           {price}
         </ListItem>
       </List>
-      <StyledButtonIcon>Order</StyledButtonIcon>
+      <StyledButtonIcon>Book now</StyledButtonIcon>
     </ContentWrapper>
   </Wrapper>
 );

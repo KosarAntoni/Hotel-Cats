@@ -1,19 +1,42 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Link = styled.a`
 	text-decoration: none;
-	font-size: ${({ theme, big }) => (big ? theme.fontSize.m : theme.fontSize.s)};
-	font-weight: ${({ theme, big }) => big && theme.fontWeight.bold};
+	font-size: ${({ theme }) => (theme.fontSize.s)};
   color: ${({ theme }) => theme.primary};
-  padding: ${({ big }) => !big && '0 0.5rem'};
+  padding: 0 0.5rem;
   transition: all 0.3s ease;
-  border-radius: ${({ big }) => !big && '1rem'};
-	border-bottom: ${({ big }) => big && '2px solid transparent'};
+  border-radius: 1rem;
 
   :hover {
-		background: ${({ theme, big }) => !big && theme.yellow};
-		border-bottom: ${({ big, theme }) => big && `2px solid ${theme.primary}`};
-	}
+    background: ${({ theme }) => theme.yellow};
+  }
+
+  ${({ big }) => big && css`
+    font-size: ${({ theme }) => theme.fontSize.m};
+    font-weight: ${({ theme }) => theme.fontWeight.bold};
+		padding: 0;
+    border-bottom: 2px solid transparent;
+		border-radius: unset;
+
+    :hover {
+      border-bottom: ${({ theme }) => `2px solid ${theme.primary}`};
+			background: none;
+    }
+  `}
+
+  ${({ small }) => small && css`
+    font-size: ${({ theme }) => theme.fontSize.xs};
+    color: ${({ theme }) => theme.secondary};
+    border-bottom: 1px solid transparent;
+    border-radius: unset;
+    padding: 0;
+
+    :hover {
+      border-bottom: ${({ theme }) => `1px solid ${theme.secondary}`};
+      background: none;
+    }
+  `}
 `;
 
 export default Link;

@@ -11,7 +11,7 @@ const Container = styled.div`
 	padding: 3rem 3rem 3rem 7rem;
   background: ${({ theme }) => (theme.background)};
   box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25);
-  border-radius: 8px;
+  border-radius: ${({ theme }) => theme.borderRadius};
   
   ::after {
     display: block;

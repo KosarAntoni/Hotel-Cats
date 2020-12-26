@@ -11,7 +11,7 @@ import gameRoomIcon from '../../../assets/icons/aboutRoom/gameRoom.svg';
 import scratchingPostIcon from '../../../assets/icons/aboutRoom/scratchingPost.svg';
 
 const Wrapper = styled.div`
-  border-radius: 8px;
+  border-radius: ${({ theme }) => theme.borderRadius};
   background: ${({ theme }) => (theme.background)};
   box-shadow: 0 0 25px rgba(208, 208, 208, 0.25);
 `;
@@ -90,7 +90,7 @@ const RoomCard = ({
             {price}
           </ListItem>
         </List>
-        <ButtonIcon>Order</ButtonIcon>
+        <ButtonIcon>Book now</ButtonIcon>
       </ContentWrapper>
     </Wrapper>
   );
