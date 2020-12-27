@@ -6,7 +6,6 @@ export default {
   component: TestimonialCard,
 };
 
-// eslint-disable-next-line react/jsx-props-no-spreading
 const Template = (args) => <TestimonialCard {...args} />;
 
 export const Default = Template.bind({});

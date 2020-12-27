@@ -4,15 +4,15 @@
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Features](#features)
-* [Inspiration](#inspiration)
 * [Contact](#contact)
 
 ## Technologies
 #### Frontend: 
 >hosted by [netlify](https://www.netlify.com/)
-* React v17.0.1
+* React
 * Styled Components
 * Storybook
+* Atomic design
 
 ## Setup
 #### [Link to live]() <br/>

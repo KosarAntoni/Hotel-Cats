@@ -8,7 +8,8 @@ const Link = styled.a`
   transition: all 0.3s ease;
   border-radius: 1rem;
 
-  :hover {
+  :hover,
+  :focus{
     background: ${({ theme }) => theme.yellow};
   }
 
@@ -19,7 +20,8 @@ const Link = styled.a`
     border-bottom: 2px solid transparent;
 		border-radius: unset;
 
-    :hover {
+    :hover,
+    :focus{
       border-bottom: ${({ theme }) => `2px solid ${theme.primary}`};
 			background: none;
     }
@@ -32,7 +34,8 @@ const Link = styled.a`
     border-radius: unset;
     padding: 0;
 
-    :hover {
+    :hover,
+    :focus{
       border-bottom: ${({ theme }) => `1px solid ${theme.secondary}`};
       background: none;
     }

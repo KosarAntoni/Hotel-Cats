@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 	}
 `;
 
-const LinksContainer = styled.div`
+const LinksContainer = styled.nav`
 	display: flex;
 	margin-top: 2.5rem;
 
@@ -31,7 +31,7 @@ const LinksContainer = styled.div`
   }
 `;
 
-const LinksColumnContainer = styled.div`
+const LinksColumnContainer = styled.ul`
 	display: flex;
 	flex-direction: column;
 	max-width: 200px;
@@ -47,7 +47,7 @@ const Separator = styled.div`
   background-color: ${({ theme }) => theme.secondary};
 `;
 
-const CopyrightsWrapper = styled.div`
+const CopyrightsWrapper = styled.ul`
 	display: flex;
 	flex-direction: column;
 	padding: 2.5rem 1.5rem;

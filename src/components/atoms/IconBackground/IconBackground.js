@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const IconBackground = styled.div`
   background-image: url(${({ icon }) => icon});
-  background-size: 50%;
+  background-size: 5rem;
 	background-repeat: no-repeat;
   background-position: 50%;
 	background-color: ${({ theme }) => theme.yellow};
