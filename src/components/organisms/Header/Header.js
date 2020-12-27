@@ -14,8 +14,12 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 100vw;
   padding: 1.5rem;
+  z-index: 10;
+
+  @media screen and ${({ theme }) => theme.viewPorts.viewport7} {
+    padding: 1.5rem 4.5rem;
+  }
 `;
 
 const ContentContainer = styled.div`
@@ -23,7 +27,7 @@ const ContentContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 970px;
+  max-width: 1170px;
   width: 100%;
   margin: 0 auto;
 `;

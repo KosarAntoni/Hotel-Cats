@@ -4,16 +4,15 @@ import Link from '../../atoms/Link/Link';
 import Logo from '../../atoms/Logo/Logo';
 
 const Wrapper = styled.div`
-	padding: 3rem 1.5rem;
-  max-width: 970px;
-  margin: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1.5rem;
 
   @media screen and ${({ theme }) => theme.viewPorts.viewport7} {
-		padding: 1rem 4.5rem;
-    display: flex;
-		justify-content: space-between;
-		align-content: center;
-	}
+    padding: 1.5rem 4.5rem;
+  }
 `;
 
 const LinksContainer = styled.nav`
@@ -26,7 +25,7 @@ const LinksContainer = styled.nav`
 		
 		// awful part maybe fix later XD 
 		> * > * {
-      margin-left: 2rem;
+      margin-left: 3rem;
 		}
   }
 `;
@@ -34,7 +33,6 @@ const LinksContainer = styled.nav`
 const LinksColumnContainer = styled.ul`
 	display: flex;
 	flex-direction: column;
-	max-width: 200px;
 
   @media screen and ${({ theme }) => theme.viewPorts.viewport7} {
     flex-direction: row;
@@ -42,22 +40,29 @@ const LinksColumnContainer = styled.ul`
 `;
 
 const Separator = styled.div`
-  width: 100%;
   height: 1px;
   background-color: ${({ theme }) => theme.secondary};
-`;
-
-const CopyrightsWrapper = styled.ul`
-	display: flex;
-	flex-direction: column;
-	padding: 2.5rem 1.5rem;
+  max-width: 1170px;
+  width: 100%;
+  margin: 3rem auto 1.5rem;
 
   @media screen and ${({ theme }) => theme.viewPorts.viewport7} {
-		max-width: 970px;
-		margin: 0 auto;
-    padding: 1rem 4.5rem;
-		flex-direction: row;
-		justify-content: space-between;
+    margin: 1.5rem auto;
+  }
+`;
+
+const ContentContainer = styled.ul`
+	display: flex;
+	flex-direction: column;
+
+  @media screen and ${({ theme }) => theme.viewPorts.viewport7} {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1170px;
+    width: 100%;
+    margin: 0 auto;
   }
 `;
 
@@ -78,23 +83,25 @@ const StyledLink = styled(Link)`
 const Footer = () => (
   <>
     <Wrapper>
-      <Logo href="https://google.com" />
-      <LinksContainer>
-        <LinksColumnContainer>
-          <StyledLink href="https://google.com">Why us?</StyledLink>
-          <StyledLink href="https://google.com">Rooms</StyledLink>
-        </LinksColumnContainer>
-        <LinksColumnContainer>
-          <StyledLink href="https://google.com">Testimonials</StyledLink>
-          <StyledLink href="https://google.com">Find us</StyledLink>
-        </LinksColumnContainer>
-      </LinksContainer>
+      <ContentContainer>
+        <Logo href="https://google.com" />
+        <LinksContainer>
+          <LinksColumnContainer>
+            <StyledLink href="https://google.com">Why us?</StyledLink>
+            <StyledLink href="https://google.com">Rooms</StyledLink>
+          </LinksColumnContainer>
+          <LinksColumnContainer>
+            <StyledLink href="https://google.com">Testimonials</StyledLink>
+            <StyledLink href="https://google.com">Find us</StyledLink>
+          </LinksColumnContainer>
+        </LinksContainer>
+      </ContentContainer>
+      <Separator />
+      <ContentContainer>
+        <StyledLink small href="https://google.com">&copy; 2019 All rights reserved</StyledLink>
+        <StyledLink small href="https://google.com">Privacy policy</StyledLink>
+      </ContentContainer>
     </Wrapper>
-    <Separator />
-    <CopyrightsWrapper>
-      <StyledLink small href="https://google.com">&copy; 2019 All rights reserved</StyledLink>
-      <StyledLink small href="https://google.com">Privacy policy</StyledLink>
-    </CopyrightsWrapper>
   </>
 );
 

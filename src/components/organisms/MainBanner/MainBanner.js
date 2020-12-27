@@ -29,7 +29,7 @@ const Wrapper = styled.div`
     justify-content: center;
     padding: 14rem 21rem;
     min-height: 500px;
-    background-position: bottom right;
+    background-position: 100% 90%;
     background-size: 60%;
   }
 
