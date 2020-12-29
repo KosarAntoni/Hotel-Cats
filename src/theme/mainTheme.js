@@ -1,6 +1,7 @@
 export const theme = {
   primary: 'rgb(26, 33, 47)',
   secondary: 'rgb(132, 132, 132)',
+  grey: 'rgb(225, 225, 225)',
   orange: 'rgb(255, 114, 54)',
   red: 'rgb(204, 0, 0)',
   yellow: 'rgb(250, 197, 99)',

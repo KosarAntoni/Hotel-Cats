@@ -3,9 +3,6 @@ import styled from 'styled-components';
 const Button = styled.button`
 	position: relative;
 	background-color: ${({ theme, white }) => (white ? theme.background : theme.yellow)};
-	background-size: 25%;
-  background-repeat: no-repeat;
-  background-position: center right 7.5%;
 	padding: 2rem 3rem;
 	border-radius: 10rem;
 	border: none;

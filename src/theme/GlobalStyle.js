@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import { theme } from './mainTheme';
 
 const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
@@ -15,8 +14,7 @@ const GlobalStyle = createGlobalStyle`
   }
   
   html {
-    font-size: 50%;
-    padding-bottom: 30vh;
+    font-size: 62.5%;
   }
   
   body {
@@ -24,14 +22,6 @@ const GlobalStyle = createGlobalStyle`
 		font-family: 'Lato', sans-serif;
 		//font-family: 'Rubik', sans-serif;  
 		}
-  
-      @media screen and ${theme.viewPorts.viewport7} {
-				html {
-					font-size: 62.5%;
-					padding-bottom: 0;
-				}
-      }
-
 `;
 
 export default GlobalStyle;

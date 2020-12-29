@@ -12,8 +12,10 @@ import vkontakteIcon from '../../../assets/icons/socialIcons/vk.svg';
 const Wrapper = styled.div`
   position: relative;
   display: flex;
+  align-items: center;
   flex-direction: column;
   width: 100%;
+  height: 7rem;
   padding: 1.5rem;
   z-index: 10;
 
@@ -23,13 +25,14 @@ const Wrapper = styled.div`
 `;
 
 const ContentContainer = styled.div`
-  position: relative;
+  position: ${({ isMenuOpen }) => (isMenuOpen ? 'fixed' : 'relative')};
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 1170px;
   width: 100%;
   margin: 0 auto;
+  padding: ${({ isMenuOpen }) => (isMenuOpen ? '0 1.5rem' : '0')};
 `;
 
 const StyledLogo = styled(Logo)`
@@ -42,6 +45,7 @@ const BackgroundContainer = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
+  overflow: hidden;
   visibility: ${({ isMenuOpen }) => (isMenuOpen ? 'visible' : 'hidden')};
   transition-delay: ${({ isMenuOpen }) => (!isMenuOpen && '1s')};
   
@@ -56,7 +60,6 @@ const Background = styled(motion.div)`
   left: 3rem;
   width: 1rem;
   height: 1rem;
-  max-height: 100vh;
   border-radius: 100%;
   background-color: ${({ theme }) => theme.yellow};
   
@@ -69,7 +72,6 @@ const Background = styled(motion.div)`
 const NavContainer = styled(motion.nav)`
   position: absolute;
   top: 9rem;
-  left: 0;
 	display: flex;
   flex-direction: column;
   
@@ -139,7 +141,7 @@ const Header = () => {
         />
       </BackgroundContainer>
 
-      <ContentContainer>
+      <ContentContainer isMenuOpen={isMenuOpen}>
         <StyledLogo href="https://google.com" />
 
         <WideScreenNavContainer>

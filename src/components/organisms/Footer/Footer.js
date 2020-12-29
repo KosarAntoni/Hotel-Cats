@@ -41,7 +41,7 @@ const LinksColumnContainer = styled.ul`
 
 const Separator = styled.div`
   height: 1px;
-  background-color: ${({ theme }) => theme.secondary};
+  background-color: ${({ theme }) => theme.grey};
   max-width: 1170px;
   width: 100%;
   margin: 3rem auto 1.5rem;
