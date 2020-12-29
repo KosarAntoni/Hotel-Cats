@@ -23,14 +23,18 @@ const Container = styled.div`
     font-family: Lato, sans-serif;
     font-size: 7.2rem;
     line-height: 6.4rem;
-    color: ${({ theme }) => theme.orange};
+    color: ${({ theme }) => theme.yellow};
   }
 `;
 
 const Footer = styled.div`
-  display: flex;
+  display: none;
   justify-content: space-between;
   margin-top: 2rem;
+
+  @media screen and ${({ theme }) => theme.viewPorts.viewport7} {
+    display: flex;
+  }
 `;
 
 const StyledParagraph = styled(Paragraph)`

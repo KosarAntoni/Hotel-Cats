@@ -5,7 +5,7 @@ import cure from '../../../assets/icons/whyUs/cure.svg';
 import meal from '../../../assets/icons/whyUs/meal.svg';
 import taxi from '../../../assets/icons/whyUs/taxi.svg';
 import temperature from '../../../assets/icons/whyUs/temperature.svg';
-// import video from '../../../assets/icons/whyUs/video.svg';
+import video from '../../../assets/icons/whyUs/video.svg';
 
 export default {
   title: 'Molecules/WhyUsCard',
@@ -23,7 +23,7 @@ export const Temperature = () => (
 
 export const Video = () => (
   <WhyUsCard
-    icon={temperature}
+    icon={video}
     title="Video surveillance"
     content="We provide access to our system. You will be able to follow follow your pet from your smartphone or computer."
   />
@@ -33,7 +33,7 @@ export const Taxi = () => (
   <WhyUsCard
     icon={taxi}
     title="Zootaxi"
-    content="Мы приедем за вашим питомцем в любой район Санкт-Петербурга."
+    content="We will come to pick up your pet anywhere in St. Petersburg."
   />
 );
 

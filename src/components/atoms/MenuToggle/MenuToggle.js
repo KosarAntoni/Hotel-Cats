@@ -4,12 +4,14 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Button = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   outline: none;
   border: none;
   cursor: pointer;
-  width: 2.2rem;
-  height: 1.8rem;
-  border-radius: 50%;
+  width: 25px;
+  height: 25px;
   background: transparent;
 `;
 
@@ -24,7 +26,7 @@ const Path = styled(motion.path).attrs((props) => ({
 
 const MenuToggle = ({ toggle, isOpen }) => (
   <Button onClick={toggle}>
-    <svg width="23" height="23" viewBox="0 0 23 23">
+    <svg width="24" height="24" viewBox="0 0 22 20">
       <Path
         d="M 2 2.5 L 20 2.5"
         animate={isOpen ? { d: 'M 3 16.5 L 17 2.5' } : { d: 'M 2 2.5 L 20 2.5' }}
