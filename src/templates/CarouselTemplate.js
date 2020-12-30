@@ -7,7 +7,7 @@ import ButtonArrow from '../components/atoms/ButtonArrow/ButtonArrow';
 const StyledCarousel = styled(Carousel)`
   
   & .rec-dot {
-    background-color: ${({ theme }) => theme.grey};
+    background-color: ${({ theme }) => theme.secondary};
     box-shadow: none;
   }
   

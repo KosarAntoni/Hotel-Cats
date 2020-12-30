@@ -75,6 +75,7 @@ const Wrapper = styled.div`
 
 const StyledParagraph = styled(Paragraph)`
   z-index: 2;
+  color: rgb(26, 33, 47);
 `;
 
 const StyledButtonIcon = styled(ButtonIcon)`
@@ -84,6 +85,7 @@ const StyledButtonIcon = styled(ButtonIcon)`
 
 const StyledHeading = styled(Heading)`
   z-index: 2;
+  color: rgb(26, 33, 47);
 `;
 
 const MainBanner = () => (

@@ -57,13 +57,13 @@ const ButtonIcon = styled.button`
 		width: 100%;
 		height: 100%;
 		opacity: 0.1;
-    box-shadow: 0px 5px 25px rgb(26, 33, 47);
+    box-shadow: 0 5px 25px rgb(0, 0, 0);
 		transition: opacity 0.2s;
   }
 	
 	:hover::after,
 	:focus::after{
-		opacity: 0.2;
+		opacity: 0.15;
 	}
 	
 	:focus {

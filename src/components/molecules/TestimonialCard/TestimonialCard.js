@@ -10,7 +10,7 @@ const Container = styled.div`
   flex-direction: column;
 	padding: 3rem 3rem 3rem 7rem;
   background: ${({ theme }) => (theme.background)};
-  box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25);
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
   border-radius: ${({ theme }) => theme.borderRadius};
   
   ::after {

@@ -13,7 +13,7 @@ import scratchingPostIcon from '../../../assets/icons/aboutRoom/scratchingPost.s
 const Wrapper = styled.div`
   border-radius: ${({ theme }) => theme.borderRadius};
   background: ${({ theme }) => (theme.background)};
-  box-shadow: 0 0 25px rgba(208, 208, 208, 0.25);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
 `;
 
 const Image = styled.img`

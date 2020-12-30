@@ -64,14 +64,14 @@ const ButtonArrow = styled.button`
 		content: '';
 		width: 100%;
 		height: 100%;
-		opacity: 0.1;
-    box-shadow: 0 2px 12px rgb(173, 152, 143);
+		opacity: 0.05;
+    box-shadow: 0 2px 12px rgb(0, 0, 0);
 		transition: opacity 0.2s;
   }
 	
 	:hover::after,
 	:focus::after{
-		opacity: 0.2;
+		opacity: 0.1;
 	}
 	
 	:focus {
