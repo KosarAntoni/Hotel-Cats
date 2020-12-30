@@ -15,10 +15,11 @@
 * Atomic design
 
 ## Setup
-#### [Link to live]() <br/>
+#### [Link to live](https://kitten-hotel4cats.netlify.app/) <br/>
 
 ## Features
 * Fully responsive
+* Auto dark mode
 
 ## Status
 Project is: _in progress_.

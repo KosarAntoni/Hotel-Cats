@@ -65,7 +65,7 @@ const ButtonArrow = styled.button`
 		width: 100%;
 		height: 100%;
 		opacity: 0.1;
-    box-shadow: 0 2px 12px rgb(173, 152, 143);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
 		transition: opacity 0.2s;
   }
 	

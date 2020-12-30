@@ -4,9 +4,9 @@ const Link = styled.a`
 	text-decoration: none;
 	font-size: ${({ theme }) => (theme.fontSize.s)};
   color: ${({ theme }) => theme.primary};
-  padding: 0 0.5rem;
+  padding: 0.5rem 1rem;
   transition: all 0.3s ease;
-  border-radius: 1rem;
+  border-radius: 2rem;
 
   :hover,
   :focus{

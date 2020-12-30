@@ -46,7 +46,7 @@ const ContentWrapper = styled.div`
 
   padding: 2.5rem;
   background: ${({ theme }) => (theme.background)};
-  box-shadow: 0 0 25px rgba(208, 208, 208, 0.25);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
   border-radius: ${({ theme }) => theme.borderRadius};
 
   @media screen and ${({ theme: { viewPorts } }) => viewPorts.viewport7} {
@@ -74,7 +74,8 @@ const List = styled.ul`
 
 const ListItem = styled.li`
 	margin-bottom: 1rem;
-	
+  color: ${({ theme }) => theme.primary};
+
   :before {
     content:"·";
     font-size: 8rem;
