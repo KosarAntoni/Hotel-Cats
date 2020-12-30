@@ -5,6 +5,7 @@ import { themeLight, themeDark } from '../theme/mainTheme';
 import GlobalStyle from '../theme/GlobalStyle';
 import Header from '../components/organisms/Header/Header';
 import Footer from '../components/organisms/Footer/Footer';
+import Contacts from '../components/organisms/Contacts/Contacts';
 
 const MainTemplate = ({ children }) => {
   const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? themeDark : themeLight;
@@ -14,6 +15,7 @@ const MainTemplate = ({ children }) => {
       <GlobalStyle />
       <Header />
       {children}
+      <Contacts />
       <Footer />
     </ThemeProvider>
   );

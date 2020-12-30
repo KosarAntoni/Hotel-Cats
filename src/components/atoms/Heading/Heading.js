@@ -11,7 +11,7 @@ const Heading = styled.h1`
   `}
 	
 	${({ small }) => small && css`
-    font-size: ${({ theme }) => theme.fontSize.m};
+    font-size: ${({ theme }) => theme.fontSize.s};
   `}
 `;
 

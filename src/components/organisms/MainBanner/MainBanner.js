@@ -29,6 +29,8 @@ const Wrapper = styled.div`
     justify-content: center;
     padding: 14rem 21rem;
     min-height: 500px;
+    max-width: 1600px;
+    margin: 0 auto;
     background-position: 100% 90%;
     background-size: 60%;
   }
@@ -75,7 +77,7 @@ const Wrapper = styled.div`
 
 const StyledParagraph = styled(Paragraph)`
   z-index: 2;
-  color: rgb(26, 33, 47);
+  color: ${({ theme }) => theme.black};
 `;
 
 const StyledButtonIcon = styled(ButtonIcon)`
@@ -85,7 +87,7 @@ const StyledButtonIcon = styled(ButtonIcon)`
 
 const StyledHeading = styled(Heading)`
   z-index: 2;
-  color: rgb(26, 33, 47);
+  color: ${({ theme }) => theme.black};
 `;
 
 const MainBanner = () => (

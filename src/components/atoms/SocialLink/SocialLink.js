@@ -21,7 +21,7 @@ const SocialLink = styled.a`
 		height: 2.7rem;
 		border-radius: 100%;
 		position: absolute;
-		box-shadow: 0 0 0 2px ${({ theme }) => theme.primary};
+		box-shadow: 0 0 0 2px ${({ theme }) => theme.black};
 		opacity: 0;
     transition: all 0.3s;
   }

@@ -29,6 +29,7 @@ const Wrapper = styled.div`
 	@media screen and ${({ theme }) => theme.viewPorts.viewport12} {
     padding: 7rem 27rem;
 		max-width: 1170px;
+    margin: 0 auto;
   }
 
   ::after {
@@ -60,17 +61,18 @@ const Wrapper = styled.div`
 
 const StyledHeading = styled(Heading)`
 	z-index: 2;
+  color: ${({ theme }) => theme.black};
 `;
 
 const StyledParagraph = styled(Paragraph)`
 	text-align: center;
-	max-width: 300px;
+  color: ${({ theme }) => theme.black};
+  max-width: 300px;
 	z-index: 2;
 	
   @media screen and ${({ theme }) => theme.viewPorts.viewport7} {
     text-align: left;
   }
-	
 `;
 
 const StyledButtonIcon = styled(ButtonIcon)`
