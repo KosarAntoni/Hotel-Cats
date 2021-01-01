@@ -1,29 +1,47 @@
 import styled, { css } from 'styled-components';
 
 const Link = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 	text-decoration: none;
 	font-size: ${({ theme }) => (theme.fontSize.s)};
   color: ${({ theme }) => theme.primary};
-  padding: 0.5rem 1rem;
   transition: all 0.3s ease;
-  border-radius: 2rem;
+  
+  ::before {
+    position: absolute;
+    content: '';
+    display: block;
+    background: ${({ theme }) => theme.yellow};
+    width: 140%;
+    height: 160%;
+    border-radius: 3rem;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.3s;
+  }
 
   :hover,
   :focus{
-    background: ${({ theme }) => theme.yellow};
+    ::before {
+      opacity: 1;
+    }
   }
 
   ${({ big }) => big && css`
     font-size: ${({ theme }) => theme.fontSize.m};
     font-weight: ${({ theme }) => theme.fontWeight.bold};
-		padding: 0;
     border-bottom: 2px solid transparent;
-		border-radius: unset;
+    
+    ::before {
+      display: none;
+    }
 
     :hover,
     :focus{
       border-bottom: ${({ theme }) => `2px solid ${theme.primary}`};
-			background: none;
     }
   `}
 
@@ -31,13 +49,14 @@ const Link = styled.a`
     font-size: ${({ theme }) => theme.fontSize.xs};
     color: ${({ theme }) => theme.secondary};
     border-bottom: 1px solid transparent;
-    border-radius: unset;
-    padding: 0;
+
+    ::before {
+      display: none;
+    }
 
     :hover,
     :focus{
       border-bottom: ${({ theme }) => `1px solid ${theme.secondary}`};
-      background: none;
     }
   `}
 `;

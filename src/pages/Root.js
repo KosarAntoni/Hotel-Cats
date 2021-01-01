@@ -1,10 +1,12 @@
 import React from 'react';
 import MainTemplate from '../templates/MainTemplate';
-import Landing from './Landing';
+// import Landing from './Landing';
+import Room from './Room';
 
 const Root = () => (
   <MainTemplate>
-    <Landing />
+    <Room />
+    {/* <Landing /> */}
   </MainTemplate>
 );
 

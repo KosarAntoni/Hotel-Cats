@@ -50,7 +50,7 @@ const Landing = () => (
       />
     </WhyUsTemplate>
 
-    <RoomsCarouselTemplate title="Rooms">
+    <RoomsCarouselTemplate title="Other rooms">
 
       <CarouselRoomCard
         area="0,90 m2"

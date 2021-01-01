@@ -26,7 +26,6 @@ const Background = styled.div`
   /%3E%3C/g%3E%3C/svg%3E%0A");   
   background-repeat: no-repeat;
   background-size: 100%;
-  //transform: rotate(-35deg);
   opacity: 0.2;
   padding: 0;
 

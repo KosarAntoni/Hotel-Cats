@@ -80,7 +80,7 @@ const ListItem = styled.li`
     content:"·";
     font-size: 8rem;
     vertical-align: top;
-    line-height: 0.8rem;
+    line-height: 0.5rem;
 		color: ${({ theme }) => theme.yellow};
   }
 `;
