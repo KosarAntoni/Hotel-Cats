@@ -39,6 +39,10 @@ const MapContainer = styled.div`
     top: -7rem;
     bottom: -7rem;
   }
+
+  @media screen and ${({ theme }) => theme.viewPorts.viewport12} {
+    right: 0;
+  }
 `;
 
 const ContentContainer = styled.div`

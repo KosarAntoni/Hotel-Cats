@@ -6,7 +6,7 @@ import ButtonIcon from '../../atoms/ButtonIcon/ButtonIcon';
 
 const Wrapper = styled.div`
 	width: 100%;
-	max-width: 29rem;
+	max-width: 50rem;
 	
 	@media screen and ${({ theme: { viewPorts } }) => viewPorts.viewport7} {
 		position: relative;
@@ -102,14 +102,17 @@ const CarouselRoomCard = ({
         <ListItem>
           {'Area - '}
           {area}
+          {' m2'}
         </ListItem>
         <ListItem>
           {'Dimensions - '}
           {dimensions}
+          {' cm'}
         </ListItem>
         <ListItem>
           {'Price per day - '}
           {price}
+          {' $'}
         </ListItem>
       </List>
       <StyledButtonIcon>Book now</StyledButtonIcon>
@@ -119,9 +122,9 @@ const CarouselRoomCard = ({
 
 CarouselRoomCard.propTypes = {
   title: PropTypes.string.isRequired,
-  area: PropTypes.string.isRequired,
+  area: PropTypes.number.isRequired,
   dimensions: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
 };
 

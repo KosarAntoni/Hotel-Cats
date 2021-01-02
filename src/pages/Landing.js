@@ -12,6 +12,7 @@ import TestimonialCard from '../components/molecules/TestimonialCard/Testimonial
 import TestimonialsCarouselTemplate from '../templates/TestimonialsCarouselTemplate';
 import RoomsCarouselTemplate from '../templates/RoomsCarouselTemplate';
 import CarouselRoomCard from '../components/molecules/CarouselRoomCard/CarouselRoomCard';
+import { Testimonials, Rooms } from '../data/data';
 
 const Landing = () => (
   <>
@@ -52,50 +53,31 @@ const Landing = () => (
 
     <RoomsCarouselTemplate title="Other rooms">
 
-      <CarouselRoomCard
-        area="0,90 m2"
-        image="https://i.pinimg.com/originals/cc/ef/d3/ccefd383260251354a86612682772f14.jpg"
-        dimensions="90x100x180 cm"
-        price="20$"
-        title="Economy plus"
-      />
-
-      <CarouselRoomCard
-        area="0,90 m2"
-        image="https://i.pinimg.com/originals/cc/ef/d3/ccefd383260251354a86612682772f14.jpg"
-        dimensions="90x100x180 cm"
-        price="20$"
-        title="Economy plus"
-      />
-
-      <CarouselRoomCard
-        area="0,90 m2"
-        image="https://i.pinimg.com/originals/cc/ef/d3/ccefd383260251354a86612682772f14.jpg"
-        dimensions="90x100x180 cm"
-        price="20$"
-        title="Economy plus"
-      />
+      {Rooms.map((i) => (
+        i.isInCarousel
+          ? (
+            <CarouselRoomCard
+              key={i.id}
+              area={i.area}
+              image={i.images[0]}
+              dimensions={i.dimension}
+              price={i.price}
+              title={i.title}
+            />
+          ) : null
+      ))}
 
     </RoomsCarouselTemplate>
 
     <TestimonialsCarouselTemplate title="Testimonials">
-
-      <TestimonialCard
-        date="1976-04-19T12:59-0500"
-        content={'Friends recommended a hotel for pets. They always leave their cat here when they leave. Pets are very well taken care of in "Koteika", the hotel is very clean. I recommend to everyone! We will contact you again.'}
-        name="Ekaterina Minaeva"
-      />
-      <TestimonialCard
-        date="1976-04-19T12:59-0500"
-        content={'Friends recommended a hotel for pets. They always leave their cat here when they leave. Pets are very well taken care of in "Koteika", the hotel is very clean. I recommend to everyone! We will contact you again.'}
-        name="Ekaterina Minaeva"
-      />
-      <TestimonialCard
-        date="1976-04-19T12:59-0500"
-        content={'Friends recommended a hotel for pets. They always leave their cat here when they leave. Pets are very well taken care of in "Koteika", the hotel is very clean. I recommend to everyone! We will contact you again.'}
-        name="Ekaterina Minaeva"
-      />
-
+      {Testimonials.map((i) => (
+        <TestimonialCard
+          key={i.id}
+          date={i.date}
+          content={i.content}
+          name={i.name}
+        />
+      ))}
     </TestimonialsCarouselTemplate>
   </>
 );

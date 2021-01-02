@@ -5,7 +5,6 @@ import RoomInfoTemplate from '../templates/RoomInfoTemplate';
 
 const Room = () => (
   <>
-
     <RoomInfoTemplate
       title="Economy plus"
       area="0,90 m2"

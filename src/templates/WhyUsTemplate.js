@@ -6,13 +6,16 @@ import SectionTemplate from './SectionTemplate';
 const CardsContainer = styled.div`
 	display: grid;
 	grid-gap: 3rem;
+  grid-template-rows: 1fr * 6;
 
   @media screen and ${({ theme }) => theme.viewPorts.viewport7} {
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
   }  
 	
 	@media screen and ${({ theme }) => theme.viewPorts.viewport12} {
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
   }
 `;
 

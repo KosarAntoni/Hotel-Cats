@@ -16,26 +16,22 @@ const Wrapper = styled.div`
 `;
 
 const LinksContainer = styled.nav`
-	display: flex;
+	display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 3rem 3rem;
 	margin-top: 2.5rem;
+  align-items: start;
+  max-width: 400px;
 
   @media screen and ${({ theme }) => theme.viewPorts.viewport7} {
-    align-items: center;  
-		margin-top: 0;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 3rem;
+    margin-top: 0;
+    justify-items: end;
 		
-		// awful part maybe fix later XD 
-		> * > * {
+		> * {
       margin-left: 3rem;
 		}
-  }
-`;
-
-const LinksColumnContainer = styled.ul`
-	display: flex;
-	flex-direction: column;
-
-  @media screen and ${({ theme }) => theme.viewPorts.viewport7} {
-    flex-direction: row;
   }
 `;
 
@@ -67,17 +63,18 @@ const ContentContainer = styled.ul`
 `;
 
 const StyledLink = styled(Link)`
-	width: fit-content;
-
-  :first-child {
-    margin-bottom: 1.5rem;
-  }
-
-  @media screen and ${({ theme }) => theme.viewPorts.viewport7} {
-    :first-child {
-      margin-bottom: 0;
-    }
-  }
+  text-align: left;
+	 width: fit-content;
+  //
+  // :first-child {
+  //   margin-bottom: 1.5rem;
+  // }
+  //
+  // @media screen and ${({ theme }) => theme.viewPorts.viewport7} {
+  //   :first-child {
+  //     margin-bottom: 0;
+  //   }
+  // }
 `;
 
 const Footer = () => (
@@ -86,14 +83,10 @@ const Footer = () => (
       <ContentContainer>
         <Logo href="https://google.com" />
         <LinksContainer>
-          <LinksColumnContainer>
-            <StyledLink href="https://google.com">Why us?</StyledLink>
-            <StyledLink href="https://google.com">Rooms</StyledLink>
-          </LinksColumnContainer>
-          <LinksColumnContainer>
-            <StyledLink href="https://google.com">Testimonials</StyledLink>
-            <StyledLink href="https://google.com">Find us</StyledLink>
-          </LinksColumnContainer>
+          <StyledLink href="https://google.com">Why us?</StyledLink>
+          <StyledLink href="https://google.com">Rooms</StyledLink>
+          <StyledLink href="https://google.com">Testimonials</StyledLink>
+          <StyledLink href="https://google.com">Find us</StyledLink>
         </LinksContainer>
       </ContentContainer>
       <Separator />

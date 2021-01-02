@@ -72,9 +72,11 @@ const Background = styled.div`
 const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
 
   @media screen and ${({ theme }) => theme.viewPorts.viewport7} {
-    width: 100%;
+    width: 80%;
+    max-width: 400px;
     height: 100%;
     margin: 0 auto 0 7rem;
   }
@@ -109,6 +111,7 @@ const StyledIconText = styled(IconText)`
 `;
 
 const StyledButton = styled(ButtonIcon)`
+  margin-top: 1rem;
   @media screen and ${({ theme }) => theme.viewPorts.viewport7} {
     margin-right: auto;
   }

@@ -7,11 +7,13 @@ import Paragraph from '../../atoms/Paragraph/Paragraph';
 const Container = styled.div`
   position: relative;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
 	padding: 3rem 3rem 3rem 7rem;
   background: ${({ theme }) => (theme.background)};
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
   border-radius: ${({ theme }) => theme.borderRadius};
+  min-height: 20rem;
   
   ::after {
     display: block;
@@ -40,6 +42,7 @@ const Footer = styled.div`
 const StyledParagraph = styled(Paragraph)`
   color: ${({ theme }) => theme.secondary};
   font-size: ${({ theme }) => theme.fontSize.xs};
+  margin-bottom: auto;
 `;
 
 const TestimonialCard = ({ name, date, content }) => (

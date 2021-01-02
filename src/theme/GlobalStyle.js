@@ -22,7 +22,8 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.4rem;
 		font-family: 'Lato', sans-serif;
 		//font-family: 'Rubik', sans-serif;  
-		}
+    color: ${({ theme }) => theme.primary};
+  }
 `;
 
 export default GlobalStyle;

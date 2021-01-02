@@ -63,7 +63,9 @@ const CarouselTemplate = ({ children, itemsPerPage }) => {
 };
 
 CarouselTemplate.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.oneOfType(
+    [PropTypes.element, PropTypes.arrayOf(PropTypes.element)],
+  ).isRequired,
   itemsPerPage: PropTypes.number,
 };
 

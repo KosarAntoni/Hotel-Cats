@@ -25,6 +25,7 @@ const Link = styled.a`
 
   :hover,
   :focus{
+    color: ${({ theme }) => theme.black};
     ::before {
       opacity: 1;
     }
@@ -41,6 +42,7 @@ const Link = styled.a`
 
     :hover,
     :focus{
+      color: ${({ theme }) => theme.primary};
       border-bottom: ${({ theme }) => `2px solid ${theme.primary}`};
     }
   `}
@@ -56,6 +58,7 @@ const Link = styled.a`
 
     :hover,
     :focus{
+      color: ${({ theme }) => theme.primary};
       border-bottom: ${({ theme }) => `1px solid ${theme.secondary}`};
     }
   `}

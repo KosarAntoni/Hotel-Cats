@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Input = styled.input`
 	position: relative;
@@ -8,19 +8,27 @@ const Input = styled.input`
   background-position: center right 7.5%;
 	padding: 2rem 3rem;
 	border-radius: 10rem;
-	border: ${({ theme, error }) => (`2px solid ${error ? theme.red : theme.secondary}`)};
+	border-width: 2px;
+	border-style: solid;
+	border-color: ${({ theme, error }) => (error ? theme.red : theme.grey)};
 	font-size: ${({ theme }) => theme.fontSize.s};
   font-family: 'Lato', sans-serif;
   color: ${({ theme }) => (theme.primary)};
 	cursor: pointer;
 	transition: all 0.3s;
 	
+	${({ square }) => square && css`
+		border-width: 1px;
+		border-radius: 0;
+		padding: 0.5rem;
+	`}
+	
 	:hover {
-    border: ${({ theme }) => (`2px solid ${theme.primary}`)};
+    border-color: ${({ theme }) => theme.primary};
   }
 	
 	:focus {
-    border: ${({ theme }) => (`2px solid ${theme.orange}`)};
+    border-color: ${({ theme }) => theme.orange};
     outline: none;
   }
 	

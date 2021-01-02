@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Heading from '../components/atoms/Heading/Heading';
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   display: flex;
   width: 100%;
   padding: 7rem 1.5rem 2rem;

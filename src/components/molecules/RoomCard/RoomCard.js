@@ -42,6 +42,7 @@ const List = styled.ul`
 const ListItem = styled.li`
 	margin-bottom: 1rem;
   display: flex;
+  color: ${({ theme }) => theme.primary};
 `;
 
 const FurnishingsContainer = styled.div`
@@ -67,10 +68,12 @@ const RoomCard = ({
           <ListItem>
             {'Area - '}
             {area}
+            {' m2'}
           </ListItem>
           <ListItem>
             {'Dimensions - '}
             {dimensions}
+            {' cm'}
           </ListItem>
           <ListItem>
             {'Furnishings - '}
@@ -88,6 +91,7 @@ const RoomCard = ({
           <ListItem>
             {'Price per day - '}
             {price}
+            {' $'}
           </ListItem>
         </List>
         <ButtonIcon>Book now</ButtonIcon>
@@ -98,9 +102,9 @@ const RoomCard = ({
 
 RoomCard.propTypes = {
   title: PropTypes.string.isRequired,
-  area: PropTypes.string.isRequired,
+  area: PropTypes.number.isRequired,
   dimensions: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   furnishings: PropTypes.objectOf(PropTypes.bool).isRequired,
 };

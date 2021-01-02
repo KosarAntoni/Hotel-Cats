@@ -8,7 +8,7 @@ const Checkbox = styled.input.attrs({ type: 'checkbox' })`
   -moz-appearance: none;
   -o-appearance: none;
   appearance: none;
-  border: 1px solid ${({ theme }) => theme.secondary};
+  border: 1px solid ${({ theme }) => theme.grey};
   outline: none;
   transition-duration: 0.3s;
   cursor: pointer;

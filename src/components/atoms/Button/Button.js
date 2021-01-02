@@ -2,11 +2,11 @@ import styled from 'styled-components';
 
 const Button = styled.button`
 	position: relative;
-	background-color: ${({ theme, white }) => (white ? theme.background : theme.yellow)};
-	padding: 2rem 3rem;
+	background-color: ${({ theme, outline }) => (outline ? theme.background : theme.yellow)};
+	padding: 1.5rem;
 	border-radius: 10rem;
 	border: none;
-	box-shadow: ${({ theme, white }) => (white ? `0 0 0 2px inset ${theme.yellow}` : 'none')};
+	box-shadow: ${({ theme, outline }) => (outline ? `0 0 0 2px inset ${theme.yellow}` : 'none')};
 	font-size: ${({ theme }) => theme.fontSize.s};
 	color: ${({ theme }) => (theme.primary)};
 	cursor: pointer;
@@ -19,7 +19,7 @@ const Button = styled.button`
 		height: 100%;
 		content: '';
 		border-radius: 10rem;
-		background-color: ${({ theme, white }) => (white ? theme.yellow : theme.background)};
+		background-color: ${({ theme, outline }) => (outline ? theme.yellow : theme.background)};
 		opacity: 0;
     transition: width 0.3s;
   }
@@ -39,7 +39,7 @@ const Button = styled.button`
 		width: 100%;
 		height: 100%;
 		opacity: 0.1;
-    box-shadow: 0px 5px 25px rgb(26, 33, 47);
+    box-shadow: 0 5px 25px rgb(26, 33, 47);
 		transition: opacity 0.2s;
   }
 	

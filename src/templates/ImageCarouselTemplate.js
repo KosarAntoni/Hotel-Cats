@@ -56,6 +56,7 @@ const Thumbnail = styled.img`
   height: 6.5rem;
   object-fit: cover;
   border-radius: 0.5rem;
+  cursor: pointer;
 
   @media screen and ${({ theme }) => theme.viewPorts.viewport7} {
     width: 7rem;
@@ -70,6 +71,7 @@ const ImageCarouselTemplate = ({ images }) => {
     <Wrapper>
       <StyledCarousel
         ref={carousel}
+        enableSwipe={false}
         enableMouseSwipe={false}
         showArrows={false}
         pagination={false}

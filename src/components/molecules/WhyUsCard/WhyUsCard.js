@@ -8,8 +8,9 @@ import Paragraph from '../../atoms/Paragraph/Paragraph';
 const Container = styled.div`
 	padding: 3rem;
   background: ${({ theme }) => (theme.background)};
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
   border-radius: ${({ theme }) => theme.borderRadius};
+  min-height: 28rem;
 `;
 
 const StyledIconBackground = styled(IconBackground)`
