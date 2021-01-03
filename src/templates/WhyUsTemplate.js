@@ -52,7 +52,7 @@ const Background = styled.div`
 `;
 
 const WhyUsTemplate = ({ children, title }) => (
-  <SectionTemplate title={title}>
+  <SectionTemplate title={title} id="whyus">
     <Background />
     <CardsContainer>
       {children}

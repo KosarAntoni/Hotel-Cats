@@ -37,7 +37,7 @@ const Background = styled.div`
 `;
 
 const TestimonialsCarouselTemplate = ({ children, title }) => (
-  <SectionTemplate title={title}>
+  <SectionTemplate title={title} id="testimonials">
     <Background />
     <CarouselTemplate itemsPerPage={2}>
       {children}

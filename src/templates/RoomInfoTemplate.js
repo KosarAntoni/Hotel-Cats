@@ -12,7 +12,7 @@ import scratchingPostIcon from '../assets/icons/aboutRoom/scratchingPost.svg';
 import catHouseIcon from '../assets/icons/aboutRoom/catHouse.svg';
 import ImageCarouselTemplate from './ImageCarouselTemplate';
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   display: flex;
   width: 100%;
   padding: 4rem 1.5rem 2rem;
@@ -134,10 +134,12 @@ const RoomInfoTemplate = ({
           <StyledParagraph>
             {'Area - '}
             {area}
+            {' m2'}
           </StyledParagraph>
           <StyledParagraph>
             {'Dimensions - '}
             {dimensions}
+            {' cm'}
           </StyledParagraph>
           <Paragraph>Furnishings</Paragraph>
           <FurnishingsContainer>
@@ -152,6 +154,7 @@ const RoomInfoTemplate = ({
           <StyledPriceParagraph>
             {'Price per day - '}
             {price}
+            {' $'}
           </StyledPriceParagraph>
           <StyledButton>Book now</StyledButton>
         </InfoContainer>
@@ -162,9 +165,9 @@ const RoomInfoTemplate = ({
 
 RoomInfoTemplate.propTypes = {
   title: PropTypes.string.isRequired,
-  area: PropTypes.string.isRequired,
+  area: PropTypes.number.isRequired,
   dimensions: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
   furnishings: PropTypes.objectOf(PropTypes.bool).isRequired,
   images: PropTypes.arrayOf(PropTypes.string).isRequired,
 };

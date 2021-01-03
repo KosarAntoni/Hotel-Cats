@@ -6,4 +6,4 @@ export default {
   component: Logo,
 };
 
-export const Default = () => <Logo href="https://google.com" />;
+export const Default = () => <Logo href="https://kitten-hotel4cats.netlify.app/" />;

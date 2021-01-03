@@ -32,8 +32,8 @@ const StyledHeading = styled(Heading)`
   }
 `;
 
-const SectionTemplate = ({ children, title }) => (
-  <Wrapper>
+const SectionTemplate = ({ children, title, id }) => (
+  <Wrapper id={id}>
     <ContentContainer>
       <StyledHeading>{title}</StyledHeading>
       {children}
@@ -42,8 +42,13 @@ const SectionTemplate = ({ children, title }) => (
 );
 
 SectionTemplate.propTypes = {
+  id: PropTypes.string,
   title: PropTypes.string.isRequired,
   children: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
+
+SectionTemplate.defaultProps = {
+  id: '',
 };
 
 export default SectionTemplate;

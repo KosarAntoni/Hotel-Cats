@@ -5,7 +5,7 @@ import Heading from '../../atoms/Heading/Heading';
 import ButtonIcon from '../../atoms/ButtonIcon/ButtonIcon';
 import backgroundImage from '../../../assets/f4245d9f6f335156a55557fd4011a131.png';
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   position: relative;
   display: flex;
   flex-direction: column;

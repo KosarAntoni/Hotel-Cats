@@ -9,17 +9,18 @@ import facebookIcon from '../../../assets/icons/socialIcons/fb.svg';
 import vkontakteIcon from '../../../assets/icons/socialIcons/vk.svg';
 import Logo from '../../atoms/Logo/Logo';
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   display: flex;
   max-width: 1600px;
   width: 100%;
-  margin: 0 auto;
+  margin: 7rem auto 0;
   padding: 4rem 1.5rem 34rem;
   overflow: hidden;
   background-color: ${({ theme }) => theme.yellow};
 
   @media screen and ${({ theme }) => theme.viewPorts.viewport7} {
     padding: 7rem 4.5rem ;
+    margin-top: 14rem;
   }
 `;
 
@@ -86,22 +87,22 @@ const StyledLink = styled(Link)`
 `;
 
 const Contacts = () => (
-  <Wrapper>
+  <Wrapper id="contact">
     <ContentContainer>
       <StyledHeading>Find us</StyledHeading>
       <StyledSmallHeading small>Location</StyledSmallHeading>
-      <StyledLink small href="https://google.com">St. Petersburg, Bolshaya Konyushennaya St., 19</StyledLink>
+      <StyledLink small href="https://kitten-hotel4cats.netlify.app/">St. Petersburg, Bolshaya Konyushennaya St., 19</StyledLink>
       <StyledSmallHeading small>Working hours</StyledSmallHeading>
-      <StyledLink small href="https://google.com">Every day from 9:00 to 20:00</StyledLink>
+      <StyledLink small href="https://kitten-hotel4cats.netlify.app/">Every day from 9:00 to 20:00</StyledLink>
       <StyledSmallHeading small>Phone</StyledSmallHeading>
       <StyledLink small href="tel:123456789">123-456-789</StyledLink>
       <StyledSmallHeading small>Email</StyledSmallHeading>
       <StyledLink small href="mailto:mail@mail.com">mail@mail.com</StyledLink>
       <StyledSmallHeading small>Social</StyledSmallHeading>
       <SocialLinksContainer>
-        <SocialLink href="https://www.google.pl/" icon={instagramIcon} />
-        <SocialLink href="https://www.google.pl/" icon={facebookIcon} />
-        <SocialLink href="https://www.google.pl/" icon={vkontakteIcon} />
+        <SocialLink href="https://instagram.com/" target="_blank" icon={instagramIcon} />
+        <SocialLink href="https://www.fb.com/" target="_blank" icon={facebookIcon} />
+        <SocialLink href="https://www.vk.com/" target="_blank" icon={vkontakteIcon} />
       </SocialLinksContainer>
 
       <MapContainer>
@@ -112,7 +113,7 @@ const Contacts = () => (
           }}
           defaultZoom={11}
         >
-          <Logo lat={59.938794} lng={30.323083} href="https://google.com" />
+          <Logo lat={59.938794} lng={30.323083} href="https://kitten-hotel4cats.netlify.app/" />
         </GoogleMapReact>
       </MapContainer>
     </ContentContainer>

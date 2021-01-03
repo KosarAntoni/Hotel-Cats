@@ -14,7 +14,7 @@ import RoomsCarouselTemplate from '../templates/RoomsCarouselTemplate';
 import CarouselRoomCard from '../components/molecules/CarouselRoomCard/CarouselRoomCard';
 import { Testimonials, Rooms } from '../data/data';
 
-const Landing = () => (
+const Home = () => (
   <>
     <MainBanner />
     <WhyUsTemplate title="Why us?">
@@ -57,6 +57,7 @@ const Landing = () => (
         i.isInCarousel
           ? (
             <CarouselRoomCard
+              id={i.id}
               key={i.id}
               area={i.area}
               image={i.images[0]}
@@ -81,4 +82,4 @@ const Landing = () => (
     </TestimonialsCarouselTemplate>
   </>
 );
-export default Landing;
+export default Home;

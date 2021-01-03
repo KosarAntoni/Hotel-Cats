@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link as RouterLink } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import Link from '../../atoms/Link/Link';
 import Logo from '../../atoms/Logo/Logo';
 
-const Wrapper = styled.div`
+const Wrapper = styled.footer`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -65,34 +67,52 @@ const ContentContainer = styled.ul`
 const StyledLink = styled(Link)`
   text-align: left;
 	 width: fit-content;
-  //
-  // :first-child {
-  //   margin-bottom: 1.5rem;
-  // }
-  //
-  // @media screen and ${({ theme }) => theme.viewPorts.viewport7} {
-  //   :first-child {
-  //     margin-bottom: 0;
-  //   }
-  // }
 `;
 
 const Footer = () => (
   <>
     <Wrapper>
       <ContentContainer>
-        <Logo href="https://google.com" />
+        <Logo as={RouterLink} to="/" />
         <LinksContainer>
-          <StyledLink href="https://google.com">Why us?</StyledLink>
-          <StyledLink href="https://google.com">Rooms</StyledLink>
-          <StyledLink href="https://google.com">Testimonials</StyledLink>
-          <StyledLink href="https://google.com">Find us</StyledLink>
+          <StyledLink
+            as={HashLink}
+            to={{
+              pathname: '/home',
+              hash: '#whyus',
+            }}
+          >
+            Why us?
+          </StyledLink>
+          <StyledLink
+            as={RouterLink}
+            to="/catalog"
+          >
+            Rooms
+          </StyledLink>
+          <StyledLink
+            as={HashLink}
+            to={{
+              pathname: '/home',
+              hash: '#testimonials',
+            }}
+          >
+            Testimonials
+          </StyledLink>
+          <StyledLink
+            as={HashLink}
+            to={{
+              hash: '#contact',
+            }}
+          >
+            Find us
+          </StyledLink>
         </LinksContainer>
       </ContentContainer>
       <Separator />
       <ContentContainer>
-        <StyledLink small href="https://google.com">&copy; 2019 All rights reserved</StyledLink>
-        <StyledLink small href="https://google.com">Privacy policy</StyledLink>
+        <StyledLink small href="https://kitten-hotel4cats.netlify.app/">&copy; 2019 All rights reserved</StyledLink>
+        <StyledLink small href="https://kitten-hotel4cats.netlify.app/">Privacy policy</StyledLink>
       </ContentContainer>
     </Wrapper>
   </>

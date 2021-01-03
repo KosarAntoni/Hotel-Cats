@@ -72,7 +72,7 @@ const ButtonsContainer = styled.div`
   display: flex;
   position: relative;
   margin-top: 4rem;
-  padding-right: 20rem;
+  padding-right: 17rem;
   
   @media screen and ${({ theme }) => theme.viewPorts.viewport4} {
     margin-top: 0;
@@ -94,7 +94,7 @@ const StyledSortButton = styled(Button)`
   border: none;
   background-color: ${({ theme }) => theme.background};
   padding: 1rem 2rem;
-  width: 18rem;
+  width: 15rem;
   transition: all 0.3s;
   border-radius: 2rem;
   
@@ -307,6 +307,7 @@ const RoomsGridTemplate = () => {
           </FilterWrapper>
           {SortedRooms().map((i) => (
             <RoomCard
+              id={i.id}
               key={i.id}
               title={i.title}
               dimensions={i.dimension}

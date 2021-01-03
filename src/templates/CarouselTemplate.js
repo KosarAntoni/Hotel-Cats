@@ -48,6 +48,7 @@ const CarouselTemplate = ({ children, itemsPerPage }) => {
 
       <StyledCarousel
         ref={carousel}
+        enableMouseSwipe={false}
         showEmptySlots
         itemPadding={[0, 15, 30]}
         showArrows={false}

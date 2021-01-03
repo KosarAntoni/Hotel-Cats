@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { Link as RouterLink } from 'react-router-dom';
 import Link from '../../atoms/Link/Link';
 import ButtonIcon from '../../atoms/ButtonIcon/ButtonIcon';
 import IconHint from '../../atoms/IconHint/IconHint';
@@ -54,7 +55,7 @@ const StyledIconHint = styled(IconHint)`
 `;
 
 const RoomCard = ({
-  title, area, dimensions, price, image, furnishings,
+  title, area, dimensions, price, image, furnishings, id,
 }) => {
   const {
     bed, gameRoom, scratchingPost, catHouse,
@@ -63,7 +64,7 @@ const RoomCard = ({
     <Wrapper>
       <Image src={image} alt={title} />
       <ContentWrapper>
-        <StyledLink big href={image}>{title}</StyledLink>
+        <StyledLink big as={RouterLink} to={`/room/${id}`}>{title}</StyledLink>
         <List>
           <ListItem>
             {'Area - '}
@@ -101,6 +102,7 @@ const RoomCard = ({
 };
 
 RoomCard.propTypes = {
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   title: PropTypes.string.isRequired,
   area: PropTypes.number.isRequired,
   dimensions: PropTypes.string.isRequired,

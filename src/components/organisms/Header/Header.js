@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import MenuToggle from '../../atoms/MenuToggle/MenuToggle';
@@ -9,7 +11,7 @@ import instagramIcon from '../../../assets/icons/socialIcons/inst.svg';
 import facebookIcon from '../../../assets/icons/socialIcons/fb.svg';
 import vkontakteIcon from '../../../assets/icons/socialIcons/vk.svg';
 
-const Wrapper = styled.div`
+const Wrapper = styled.header`
   position: fixed;
   top: 0;
   display: flex;
@@ -145,13 +147,36 @@ const Header = () => {
       </BackgroundContainer>
 
       <ContentContainer isMenuOpen={isMenuOpen}>
-        <StyledLogo href="https://google.com" />
+        <StyledLogo as={RouterLink} to="/" />
 
         <WideScreenNavContainer>
-          <StyledWideScreenLink href="https://google.com">Why us?</StyledWideScreenLink>
-          <StyledWideScreenLink href="https://google.com">Rooms</StyledWideScreenLink>
-          <StyledWideScreenLink href="https://google.com">Testimonials</StyledWideScreenLink>
-          <StyledWideScreenLink href="https://google.com">Find us</StyledWideScreenLink>
+          <StyledWideScreenLink
+            as={HashLink}
+            to={{
+              pathname: '/home',
+              hash: '#whyus',
+            }}
+          >
+            Why us?
+          </StyledWideScreenLink>
+          <StyledWideScreenLink as={RouterLink} to="/catalog">Rooms</StyledWideScreenLink>
+          <StyledWideScreenLink
+            as={HashLink}
+            to={{
+              pathname: '/home',
+              hash: '#testimonials',
+            }}
+          >
+            Testimonials
+          </StyledWideScreenLink>
+          <StyledWideScreenLink
+            as={HashLink}
+            to={{
+              hash: '#contact',
+            }}
+          >
+            Find us
+          </StyledWideScreenLink>
         </WideScreenNavContainer>
 
         <MenuToggleWrapper>
@@ -172,15 +197,41 @@ const Header = () => {
             damping: 40,
           }}
         >
-          <StyledLink big href="https://google.com">Why us?</StyledLink>
-          <StyledLink big href="https://google.com">Rooms</StyledLink>
-          <StyledLink big href="https://google.com">Testimonials</StyledLink>
-          <StyledLink big href="https://google.com">Find us</StyledLink>
+          <StyledLink
+            big
+            as={HashLink}
+            to={{
+              pathname: '/home',
+              hash: '#whyus',
+            }}
+          >
+            Why us?
+          </StyledLink>
+          <StyledLink big as={RouterLink} to="/catalog">Rooms</StyledLink>
+          <StyledLink
+            big
+            as={HashLink}
+            to={{
+              pathname: '/home',
+              hash: '#testimonials',
+            }}
+          >
+            Testimonials
+          </StyledLink>
+          <StyledLink
+            big
+            as={HashLink}
+            to={{
+              hash: '#contact',
+            }}
+          >
+            Find us
+          </StyledLink>
           <StyledPhoneLink big href="tel:8 (800) 333-55-99">8 (800) 333-55-99</StyledPhoneLink>
           <SocialLinksContainer>
-            <SocialLink href="https://www.google.pl/" icon={instagramIcon} />
-            <SocialLink href="https://www.google.pl/" icon={facebookIcon} />
-            <SocialLink href="https://www.google.pl/" icon={vkontakteIcon} />
+            <SocialLink href="https://instagram.com/" target="_blank" icon={instagramIcon} />
+            <SocialLink href="https://www.fb.com/" target="_blank" icon={facebookIcon} />
+            <SocialLink href="https://www.vk.com/" target="_blank" icon={vkontakteIcon} />
           </SocialLinksContainer>
         </NavContainer>
 

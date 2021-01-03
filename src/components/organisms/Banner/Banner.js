@@ -5,7 +5,7 @@ import Paragraph from '../../atoms/Paragraph/Paragraph';
 import ButtonIcon from '../../atoms/ButtonIcon/ButtonIcon';
 import backgroundImage from '../../../assets/9b6d039fdc3041bb69014fb98512b6f6.png';
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   position: relative;
 	display: flex;
 	flex-direction: column;
