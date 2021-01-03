@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 import Heading from '../../atoms/Heading/Heading';
 import Paragraph from '../../atoms/Paragraph/Paragraph';
 import ButtonIcon from '../../atoms/ButtonIcon/ButtonIcon';
@@ -83,16 +84,23 @@ const StyledButtonIcon = styled(ButtonIcon)`
   }
 `;
 
-const Banner = () => (
-  <Wrapper>
-    <StyledHeading>Every 7th day</StyledHeading>
-    <StyledHeading big>GRATIS!</StyledHeading>
-    <StyledParagraph>
-      The promotion is valid upon placement
-      in the rooms &quot;Lux&quot; and &quot;Super Lux&quot;
-    </StyledParagraph>
-    <StyledButtonIcon white>Book now</StyledButtonIcon>
-  </Wrapper>
-);
+const Banner = () => {
+  const history = useHistory();
+  const handleClick = () => (
+    history.push('?book')
+  );
+
+  return (
+    <Wrapper>
+      <StyledHeading>Every 7th day</StyledHeading>
+      <StyledHeading big>GRATIS!</StyledHeading>
+      <StyledParagraph>
+        The promotion is valid upon placement
+        in the rooms &quot;Lux&quot; and &quot;Super Lux&quot;
+      </StyledParagraph>
+      <StyledButtonIcon white onClick={handleClick}>Book now</StyledButtonIcon>
+    </Wrapper>
+  );
+};
 
 export default Banner;

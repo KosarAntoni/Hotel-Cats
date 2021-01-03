@@ -51,7 +51,7 @@ const Home = () => (
       />
     </WhyUsTemplate>
 
-    <RoomsCarouselTemplate title="Other rooms">
+    <RoomsCarouselTemplate title="Rooms">
 
       {Rooms.map((i) => (
         i.isInCarousel

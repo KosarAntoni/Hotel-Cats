@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { HashLink } from 'react-router-hash-link';
+import { useHistory } from 'react-router-dom';
 import Link from '../../atoms/Link/Link';
 import ButtonIcon from '../../atoms/ButtonIcon/ButtonIcon';
 import IconHint from '../../atoms/IconHint/IconHint';
@@ -60,6 +61,11 @@ const RoomCard = ({
   const {
     bed, gameRoom, scratchingPost, catHouse,
   } = furnishings;
+  const history = useHistory();
+  const handleClick = () => (
+    history.push('?book')
+  );
+
   return (
     <Wrapper>
       <Image src={image} alt={title} />
@@ -95,7 +101,7 @@ const RoomCard = ({
             {' $'}
           </ListItem>
         </List>
-        <ButtonIcon>Book now</ButtonIcon>
+        <ButtonIcon onClick={handleClick}>Book now</ButtonIcon>
       </ContentWrapper>
     </Wrapper>
   );

@@ -37,7 +37,7 @@ const Container = styled(motion.div)`
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
   border-radius: ${({ theme }) => theme.borderRadius};
 	max-width: 65rem;
-	padding: 5rem 2.5rem;
+	padding: 5rem 2.5rem 2.5rem;
   z-index: 12;
 
   @media screen and ${({ theme }) => theme.viewPorts.viewport7} {

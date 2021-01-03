@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 import Heading from '../components/atoms/Heading/Heading';
 import ButtonIcon from '../components/atoms/ButtonIcon/ButtonIcon';
 import Paragraph from '../components/atoms/Paragraph/Paragraph';
@@ -123,6 +124,10 @@ const RoomInfoTemplate = ({
   const {
     bed, gameRoom, scratchingPost, catHouse,
   } = furnishings;
+  const history = useHistory();
+  const handleClick = () => (
+    history.push('?book')
+  );
 
   return (
     <Wrapper>
@@ -156,7 +161,7 @@ const RoomInfoTemplate = ({
             {price}
             {' $'}
           </StyledPriceParagraph>
-          <StyledButton>Book now</StyledButton>
+          <StyledButton onClick={handleClick}>Book now</StyledButton>
         </InfoContainer>
       </ContentContainer>
     </Wrapper>
