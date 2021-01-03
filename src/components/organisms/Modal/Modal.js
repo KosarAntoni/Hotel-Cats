@@ -80,6 +80,7 @@ const Modal = ({ children, isShown, handleClose }) => (
         stiffness: 400,
         damping: 40,
       }}
+      onClick={() => handleClose()}
     />
     <Container
       initial={{ opacity: 0, y: '10%' }}

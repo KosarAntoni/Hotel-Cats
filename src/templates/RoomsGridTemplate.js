@@ -61,17 +61,20 @@ const Header = styled.div`
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+
+  @media screen and ${({ theme }) => theme.viewPorts.viewport4} {
+    margin-bottom: 4rem;
+  }
 `;
 
 const ButtonsContainer = styled.div`
   display: flex;
   position: relative;
-  width: 100%;
   margin-top: 4rem;
   padding-right: 20rem;
   
-  @media screen and ${({ theme }) => theme.viewPorts.viewport7} {
+  @media screen and ${({ theme }) => theme.viewPorts.viewport4} {
     margin-top: 0;
     width: auto;
   }
@@ -125,7 +128,6 @@ const StyledFilterButton = styled(Button)`
   background-position: center left 2rem;
   background-size: 1.2rem;
   padding: 1rem 2rem 1rem 4rem;
-  width: 18rem;
 
   @media screen and ${({ theme }) => theme.viewPorts.viewport12} {
     display: none;

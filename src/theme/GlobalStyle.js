@@ -23,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
 		font-family: 'Lato', sans-serif;
 		//font-family: 'Rubik', sans-serif;  
     color: ${({ theme }) => theme.primary};
+    padding-top: 7rem;
   }
 `;
 

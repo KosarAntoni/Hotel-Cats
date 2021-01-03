@@ -10,7 +10,8 @@ import facebookIcon from '../../../assets/icons/socialIcons/fb.svg';
 import vkontakteIcon from '../../../assets/icons/socialIcons/vk.svg';
 
 const Wrapper = styled.div`
-  position: relative;
+  position: fixed;
+  top: 0;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -18,6 +19,7 @@ const Wrapper = styled.div`
   height: 7rem;
   padding: 1.5rem;
   z-index: 10;
+  background-color: ${({ theme }) => theme.backgroundMain};
 
   @media screen and ${({ theme }) => theme.viewPorts.viewport7} {
     padding: 1.5rem 4.5rem;
@@ -25,14 +27,13 @@ const Wrapper = styled.div`
 `;
 
 const ContentContainer = styled.div`
-  position: ${({ isMenuOpen }) => (isMenuOpen ? 'fixed' : 'relative')};
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 1170px;
   width: 100%;
   margin: 0 auto;
-  padding: ${({ isMenuOpen }) => (isMenuOpen ? '0 1.5rem' : '0')};
 `;
 
 const StyledLogo = styled(Logo)`
