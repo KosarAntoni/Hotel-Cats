@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 import Paragraph from '../../atoms/Paragraph/Paragraph';
 import Heading from '../../atoms/Heading/Heading';
 import ButtonIcon from '../../atoms/ButtonIcon/ButtonIcon';
@@ -90,13 +91,20 @@ const StyledHeading = styled(Heading)`
   color: ${({ theme }) => theme.black};
 `;
 
-const MainBanner = () => (
-  <Wrapper>
-    <StyledParagraph>Saint Petersburg</StyledParagraph>
-    <StyledHeading big>Kitten</StyledHeading>
-    <StyledParagraph>Cozy hotel for cats</StyledParagraph>
-    <StyledButtonIcon white>Book now</StyledButtonIcon>
-  </Wrapper>
-);
+const MainBanner = () => {
+  const history = useHistory();
+  const handleClick = () => (
+    history.push('?book')
+  );
+
+  return (
+    <Wrapper>
+      <StyledParagraph>Saint Petersburg</StyledParagraph>
+      <StyledHeading big>Kitten</StyledHeading>
+      <StyledParagraph>Cozy hotel for cats</StyledParagraph>
+      <StyledButtonIcon white onClick={handleClick}>Book now</StyledButtonIcon>
+    </Wrapper>
+  );
+};
 
 export default MainBanner;

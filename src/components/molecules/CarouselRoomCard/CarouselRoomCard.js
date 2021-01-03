@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { HashLink } from 'react-router-hash-link';
+import { useHistory } from 'react-router-dom';
 import Link from '../../atoms/Link/Link';
 import ButtonIcon from '../../atoms/ButtonIcon/ButtonIcon';
 
@@ -94,32 +95,39 @@ const StyledButtonIcon = styled(ButtonIcon)`
 
 const CarouselRoomCard = ({
   title, area, dimensions, price, image, id,
-}) => (
-  <Wrapper>
-    <Image src={image} alt={title} />
-    <ContentWrapper>
-      <StyledLink big as={HashLink} to={`/room/${id}#`}>{title}</StyledLink>
-      <List>
-        <ListItem>
-          {'Area - '}
-          {area}
-          {' m2'}
-        </ListItem>
-        <ListItem>
-          {'Dimensions - '}
-          {dimensions}
-          {' cm'}
-        </ListItem>
-        <ListItem>
-          {'Price per day - '}
-          {price}
-          {' $'}
-        </ListItem>
-      </List>
-      <StyledButtonIcon>Book now</StyledButtonIcon>
-    </ContentWrapper>
-  </Wrapper>
-);
+}) => {
+  const history = useHistory();
+  const handleClick = () => (
+    history.push('?book')
+  );
+
+  return (
+    <Wrapper>
+      <Image src={image} alt={title} />
+      <ContentWrapper>
+        <StyledLink big as={HashLink} to={`/room/${id}#`}>{title}</StyledLink>
+        <List>
+          <ListItem>
+            {'Area - '}
+            {area}
+            {' m2'}
+          </ListItem>
+          <ListItem>
+            {'Dimensions - '}
+            {dimensions}
+            {' cm'}
+          </ListItem>
+          <ListItem>
+            {'Price per day - '}
+            {price}
+            {' $'}
+          </ListItem>
+        </List>
+        <StyledButtonIcon onClick={handleClick}>Book now</StyledButtonIcon>
+      </ContentWrapper>
+    </Wrapper>
+  );
+};
 
 CarouselRoomCard.propTypes = {
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,

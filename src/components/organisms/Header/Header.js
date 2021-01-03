@@ -189,30 +189,30 @@ const Header = () => {
           }}
         >
           <StyledLink
-            big
             as={HashLink}
             to="/home#whyus"
+            big
           >
             Why us?
           </StyledLink>
           <StyledLink
-            big
             as={HashLink}
             to="/catalog#"
+            big
           >
             Rooms
           </StyledLink>
           <StyledLink
-            big
             as={HashLink}
             to="/home#testimonials"
+            big
           >
             Testimonials
           </StyledLink>
           <StyledLink
-            big
             as={HashLink}
             to="#contact"
+            big
           >
             Find us
           </StyledLink>
