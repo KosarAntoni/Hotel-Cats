@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link as RouterLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import Link from '../../atoms/Link/Link';
 import Logo from '../../atoms/Logo/Logo';
@@ -73,20 +72,17 @@ const Footer = () => (
   <>
     <Wrapper>
       <ContentContainer>
-        <Logo as={RouterLink} to="/" />
+        <Logo as={HashLink} to="/#" />
         <LinksContainer>
           <StyledLink
             as={HashLink}
-            to={{
-              pathname: '/home',
-              hash: '#whyus',
-            }}
+            to="/home#whyus"
           >
             Why us?
           </StyledLink>
           <StyledLink
-            as={RouterLink}
-            to="/catalog"
+            as={HashLink}
+            to="/catalog#"
           >
             Rooms
           </StyledLink>
@@ -101,9 +97,7 @@ const Footer = () => (
           </StyledLink>
           <StyledLink
             as={HashLink}
-            to={{
-              hash: '#contact',
-            }}
+            to="#contact"
           >
             Find us
           </StyledLink>

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
@@ -147,33 +146,25 @@ const Header = () => {
       </BackgroundContainer>
 
       <ContentContainer isMenuOpen={isMenuOpen}>
-        <StyledLogo as={RouterLink} to="/" />
+        <StyledLogo as={HashLink} to="/#" />
 
         <WideScreenNavContainer>
           <StyledWideScreenLink
             as={HashLink}
-            to={{
-              pathname: '/home',
-              hash: '#whyus',
-            }}
+            to="/home#whyus"
           >
             Why us?
           </StyledWideScreenLink>
-          <StyledWideScreenLink as={RouterLink} to="/catalog">Rooms</StyledWideScreenLink>
+          <StyledWideScreenLink as={HashLink} to="/catalog#">Rooms</StyledWideScreenLink>
           <StyledWideScreenLink
             as={HashLink}
-            to={{
-              pathname: '/home',
-              hash: '#testimonials',
-            }}
+            to="/home#testimonials"
           >
             Testimonials
           </StyledWideScreenLink>
           <StyledWideScreenLink
             as={HashLink}
-            to={{
-              hash: '#contact',
-            }}
+            to="#contact"
           >
             Find us
           </StyledWideScreenLink>
@@ -200,30 +191,28 @@ const Header = () => {
           <StyledLink
             big
             as={HashLink}
-            to={{
-              pathname: '/home',
-              hash: '#whyus',
-            }}
+            to="/home#whyus"
           >
             Why us?
           </StyledLink>
-          <StyledLink big as={RouterLink} to="/catalog">Rooms</StyledLink>
           <StyledLink
             big
             as={HashLink}
-            to={{
-              pathname: '/home',
-              hash: '#testimonials',
-            }}
+            to="/catalog#"
+          >
+            Rooms
+          </StyledLink>
+          <StyledLink
+            big
+            as={HashLink}
+            to="/home#testimonials"
           >
             Testimonials
           </StyledLink>
           <StyledLink
             big
             as={HashLink}
-            to={{
-              hash: '#contact',
-            }}
+            to="#contact"
           >
             Find us
           </StyledLink>

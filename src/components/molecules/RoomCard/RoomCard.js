@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { Link as RouterLink } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import Link from '../../atoms/Link/Link';
 import ButtonIcon from '../../atoms/ButtonIcon/ButtonIcon';
 import IconHint from '../../atoms/IconHint/IconHint';
@@ -64,7 +64,7 @@ const RoomCard = ({
     <Wrapper>
       <Image src={image} alt={title} />
       <ContentWrapper>
-        <StyledLink big as={RouterLink} to={`/room/${id}`}>{title}</StyledLink>
+        <StyledLink big as={HashLink} to={`/room/${id}#`}>{title}</StyledLink>
         <List>
           <ListItem>
             {'Area - '}

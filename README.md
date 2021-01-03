@@ -2,7 +2,7 @@
 
 ## Table of contents
 * [Technologies](#technologies)
-* [Setup](#setup)
+* [Live](#Live)
 * [Features](#features)
 * [Contact](#contact)
 
@@ -13,13 +13,16 @@
 * Styled Components
 * Storybook
 * Atomic design
+* React Router
+* Framer motion
 
-## Setup
+## Live
 #### [Link to live](https://kitten-hotel4cats.netlify.app/) <br/>
 
 ## Features
 * Fully responsive
 * Auto dark mode
+* Content filter
 
 ## Status
 Project is: _in progress_.
