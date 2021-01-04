@@ -9,6 +9,7 @@ import Footer from '../components/organisms/Footer/Footer';
 import Contacts from '../components/organisms/Contacts/Contacts';
 import Modal from '../components/organisms/Modal/Modal';
 import BookForm from '../components/organisms/BookForm/BookForm';
+import BookSuccess from '../components/molecules/BookSuccess/BookSuccess';
 
 const MainTemplate = ({ children }) => {
   const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? themeDark : themeLight;
@@ -26,7 +27,13 @@ const MainTemplate = ({ children }) => {
         handleClose={() => history.push(`${location.pathname}${location.hash}`)}
         isShown={location.search === '?book'}
       >
-        <BookForm />
+        <BookForm handleClose={() => history.push(`${location.pathname}${location.hash}`)} />
+      </Modal>
+      <Modal
+        handleClose={() => history.push(`${location.pathname}${location.hash}`)}
+        isShown={location.search === '?bookSuccess'}
+      >
+        <BookSuccess handleClose={() => history.push(`${location.pathname}${location.hash}`)} />
       </Modal>
     </ThemeProvider>
   );

@@ -39,6 +39,7 @@ const Container = styled(motion.div)`
 	max-width: 65rem;
 	padding: 5rem 2.5rem 2.5rem;
   z-index: 12;
+  overflow: hidden;
 
   @media screen and ${({ theme }) => theme.viewPorts.viewport7} {
     padding: 7rem;

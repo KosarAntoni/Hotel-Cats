@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Formik, Form, Field } from 'formik';
-import { useHistory } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Heading from '../../atoms/Heading/Heading';
-import Input from '../../atoms/Input/Input';
 import Paragraph from '../../atoms/Paragraph/Paragraph';
 import ButtonIcon from '../../atoms/ButtonIcon/ButtonIcon';
 
@@ -16,46 +14,11 @@ const Wrapper = styled.div`
   }
 `;
 
-const StyledForm = styled(Form)`
-	display: flex;
-	flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-`;
-
-const StyledInput = styled(Input)`
-  width: 100%;
-  margin-bottom: 1rem;
-
-  @media screen and ${({ theme }) => theme.viewPorts.viewport7} {
-    margin-bottom: 2rem;
-  }
-`;
-
-const StyledLabel = styled.label`
-  width: 48%;
-  align-items: center;
-  display: flex;
-  
-  span {
-    width: 3rem;
-    text-align: right;
-    margin-right: 0.5rem;
-    vertical-align: middle;
-    font-size: ${({ theme }) => theme.fontSize.xs};
-  }
-`;
-
-const StyledDateInput = styled(Input)`
-  width: 100%;
-  padding: 1rem;
-  font-size: ${({ theme }) => theme.fontSize.xs};
-`;
-
 const StyledParagraph = styled(Paragraph)`
   width: 100%;
   margin-bottom: 0.5rem;
-  
+  text-align: center;
+
   @media screen and ${({ theme }) => theme.viewPorts.viewport7} {
     margin-bottom: 1.5rem;
   }
@@ -63,10 +26,7 @@ const StyledParagraph = styled(Paragraph)`
 
 const StyledHeading = styled(Heading)`
   margin: 0 auto 3rem;
-
-  @media screen and ${({ theme }) => theme.viewPorts.viewport7} {
-    margin-bottom: 5rem;
-  }
+	text-align: center;
 `;
 
 const StyledButtonIcon = styled(ButtonIcon)`
@@ -79,8 +39,8 @@ const StyledButtonIcon = styled(ButtonIcon)`
 
 const Background = styled.div`
   z-index: -1;
-  top: -4rem;
-  left: -3rem;
+  bottom: -3rem;
+  left: -2rem;
   position: absolute;
   width: 12rem;
   height: 12rem;
@@ -97,7 +57,7 @@ const Background = styled.div`
     d='M7.49871 7.13932C8.50479 7.13932 9.36885 6.55499 9.84899 5.66068C11.2763 3.00141 8.9321 -0.680001 6.25583 0.10841C2.87087 1.10414 3.94385 7.13932 7.49871 7.13932Z'/%3E%3Cpath d='M5.89091 11.21C7.03297 8.41567 4.32591 5.00238 1.74052 6.07635C-1.37374 7.36985 -0.000207816 12.9488 3.42404 12.9488C4.52296 12.9488 5.45682 12.2723 5.89091 11.21Z'/%3E%3Cpath d='M12.8437 17.8903C12.3497 17.7537 11.473 17.6658 10.5554 17.6531V7.18445C12.0223 7.26145 13.4498 8.31922 13.8388 10.363C14.2528 12.5409 16.01 12.4088 16.4994 14.7045C17.0311 17.1906 14.6113 18.3802 12.8437 17.8903Z'/%3E%3C/svg%3E%0A");
   background-repeat: no-repeat;
   background-size: 100%;
-  transform: rotate(125deg);
+  transform: rotate(25deg);
   opacity: 0.2;
   padding: 0;
 
@@ -107,49 +67,17 @@ const Background = styled.div`
   }
 `;
 
-const BookForm = () => {
-  const history = useHistory();
-  const handleClick = () => {
-    history.push('?');
-    setTimeout(() => history.push('?bookSuccess'), 300);
-  };
+const BookSuccess = ({ handleClose }) => (
+  <Wrapper>
+    <Background />
+    <StyledHeading>Thank you for your application!</StyledHeading>
+    <StyledParagraph>We will contact you shortly</StyledParagraph>
+    <StyledButtonIcon onClick={handleClose}>Ok</StyledButtonIcon>
+  </Wrapper>
+);
 
-  return (
-    <Wrapper>
-      <Background />
-      <StyledHeading>Book a room</StyledHeading>
-      <Formik
-        initialValues={{
-          name: '',
-          catName: '',
-          phone: '',
-          email: '',
-          dateFrom: '',
-          dateTo: '',
-        }}
-        onSubmit={handleClick}
-      >
-        {() => (
-          <StyledForm>
-            <StyledInput as={Field} id="name" name="name" placeholder="Your name" />
-            <StyledInput as={Field} id="catName" name="catName" placeholder="Cats name" />
-            <StyledInput as={Field} id="phone" name="phone" placeholder="Phone number" />
-            <StyledInput id="email" placeholder="Email" />
-            <StyledParagraph>Arrival date</StyledParagraph>
-            <StyledLabel>
-              <span>from</span>
-              <StyledDateInput as={Field} type="date" id="dateFrom" name="dateFrom" placeholder="from" />
-            </StyledLabel>
-            <StyledLabel>
-              <span>to</span>
-              <StyledDateInput as={Field} type="date" id="dateTo" name="dateTo" placeholder="to" />
-            </StyledLabel>
-            <StyledButtonIcon type="submit">Book now!</StyledButtonIcon>
-          </StyledForm>
-        )}
-      </Formik>
-    </Wrapper>
-  );
+BookSuccess.propTypes = {
+  handleClose: PropTypes.func.isRequired,
 };
 
-export default BookForm;
+export default BookSuccess;
