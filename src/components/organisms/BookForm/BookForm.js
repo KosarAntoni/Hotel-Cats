@@ -1,18 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Formik, Form, Field } from 'formik';
+import { Formik, Form } from 'formik';
 import { useHistory } from 'react-router-dom';
 import Heading from '../../atoms/Heading/Heading';
 import Input from '../../atoms/Input/Input';
 import Paragraph from '../../atoms/Paragraph/Paragraph';
 import ButtonIcon from '../../atoms/ButtonIcon/ButtonIcon';
+import StyledDatePicker from '../StyledDatePicker/StyledDatePicker';
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  max-width: 45rem;
 
   @media screen and ${({ theme }) => theme.viewPorts.viewport7} {
-    width: 45rem;
+    max-width: 45rem;
   }
 `;
 
@@ -32,24 +34,8 @@ const StyledInput = styled(Input)`
   }
 `;
 
-const StyledLabel = styled.label`
-  width: 48%;
-  align-items: center;
-  display: flex;
-  
-  span {
-    width: 3rem;
-    text-align: right;
-    margin-right: 0.5rem;
-    vertical-align: middle;
-    font-size: ${({ theme }) => theme.fontSize.xs};
-  }
-`;
-
 const StyledDateInput = styled(Input)`
-  width: 100%;
-  padding: 1rem;
-  font-size: ${({ theme }) => theme.fontSize.xs};
+  width: 49%;
 `;
 
 const StyledParagraph = styled(Paragraph)`
@@ -113,6 +99,7 @@ const BookForm = () => {
     history.push('?');
     setTimeout(() => history.push('?bookSuccess'), 300);
   };
+  const today = new Date();
 
   return (
     <Wrapper>
@@ -124,27 +111,45 @@ const BookForm = () => {
           catName: '',
           phone: '',
           email: '',
-          dateFrom: '',
-          dateTo: '',
+          dateFrom: new Date(),
+          dateTo: new Date(),
         }}
-        onSubmit={handleClick}
+        onSubmit={(values) => handleClick(values)}
       >
-        {() => (
+        {({ values, setFieldValue }) => (
           <StyledForm>
-            <StyledInput as={Field} id="name" name="name" placeholder="Your name" />
-            <StyledInput as={Field} id="catName" name="catName" placeholder="Cats name" />
-            <StyledInput as={Field} id="phone" name="phone" placeholder="Phone number" />
-            <StyledInput id="email" placeholder="Email" />
+            <StyledInput value={values.name} id="name" name="name" placeholder="Your name" />
+            <StyledInput value={values.catName} id="catName" name="catName" placeholder="Cats name" />
+            <StyledInput value={values.phone} id="phone" name="phone" placeholder="Phone number" />
+            <StyledInput value={values.email} id="email" placeholder="Email" />
             <StyledParagraph>Arrival date</StyledParagraph>
-            <StyledLabel>
-              <span>from</span>
-              <StyledDateInput as={Field} type="date" id="dateFrom" name="dateFrom" placeholder="from" />
-            </StyledLabel>
-            <StyledLabel>
-              <span>to</span>
-              <StyledDateInput as={Field} type="date" id="dateTo" name="dateTo" placeholder="to" />
-            </StyledLabel>
-            <StyledButtonIcon type="submit">Book now!</StyledButtonIcon>
+            <StyledDateInput
+              as={StyledDatePicker}
+              minDate={today}
+              locale="en-EN"
+              clearIcon={null}
+              format="dd-MM-y"
+              id="dateFrom"
+              name="dateFrom"
+              value={values.dateFrom}
+              onChange={(e) => {
+                setFieldValue('dateFrom', e);
+              }}
+            />
+            <StyledDateInput
+              as={StyledDatePicker}
+              locale="en-EN"
+              minDate={values.dateFrom}
+              clearIcon={null}
+              format="dd-MM-y"
+              id="dateFrom"
+              name="dateFrom"
+              value={values.dateTo}
+              onChange={(e) => {
+                setFieldValue('dateTo', e);
+              }}
+            />
+            <StyledButtonIcon type="submit">Reserve</StyledButtonIcon>
           </StyledForm>
         )}
       </Formik>

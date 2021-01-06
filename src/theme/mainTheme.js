@@ -33,8 +33,8 @@ export const themeLight = {
 export const themeDark = {
   primary: 'rgba(255, 255, 255, 0.6)',
   black: 'rgb(26, 33, 47)',
-  secondary: 'rgb(87, 87, 87)',
-  grey: 'rgb(175, 175, 175)',
+  secondary: 'rgb(175, 175, 175)',
+  grey: 'rgb(87, 87, 87)',
   orange: 'rgb(201, 90, 42)',
   red: 'rgb(204, 0, 0)',
   yellow: 'rgb(219, 172, 86)',

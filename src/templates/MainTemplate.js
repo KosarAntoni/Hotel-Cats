@@ -1,5 +1,5 @@
 import { ThemeProvider } from 'styled-components';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useLocation, useHistory } from 'react-router-dom';
 import { themeLight, themeDark } from '../theme/mainTheme';
@@ -12,9 +12,24 @@ import BookForm from '../components/organisms/BookForm/BookForm';
 import BookSuccess from '../components/molecules/BookSuccess/BookSuccess';
 
 const MainTemplate = ({ children }) => {
-  const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? themeDark : themeLight;
+  const [theme, setTheme] = useState(themeLight);
   const location = useLocation();
   const history = useHistory();
+
+  useEffect(() => {
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
+
+    const changeTheme = () => {
+      if (media.matches) {
+        setTheme(themeDark);
+      } else {
+        setTheme(themeLight);
+      }
+    };
+
+    media.addEventListener('change', changeTheme, false);
+    changeTheme();
+  }, [theme]);
 
   return (
     <ThemeProvider theme={theme}>
