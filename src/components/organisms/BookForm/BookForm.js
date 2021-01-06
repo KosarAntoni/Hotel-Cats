@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Formik, Form } from 'formik';
 import { useHistory } from 'react-router-dom';
+import * as Yup from 'yup';
+import 'yup-phone';
 import Heading from '../../atoms/Heading/Heading';
 import Input from '../../atoms/Input/Input';
 import Paragraph from '../../atoms/Paragraph/Paragraph';
@@ -52,6 +54,11 @@ const StyledParagraph = styled(Paragraph)`
   margin-bottom: 0.5rem;
 `;
 
+const StyledError = styled(Paragraph)`
+  margin-bottom: 0.5rem;
+  color: ${({ theme }) => theme.red}
+`;
+
 const StyledButtonIcon = styled(ButtonIcon)`
   margin: 3rem auto 0;
 
@@ -60,12 +67,21 @@ const StyledButtonIcon = styled(ButtonIcon)`
   }
 `;
 
-const StyledLabel = styled.label`
+const StyledDateLabel = styled.label`
   display: flex;
   flex-direction: column;
   align-items: center;
   
   width: 48%;
+  font-size: ${({ theme }) => theme.fontSize.s};
+`;
+
+const StyledLabel = styled.label`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  width: 100%;
   font-size: ${({ theme }) => theme.fontSize.s};
 `;
 
@@ -99,6 +115,23 @@ const Background = styled.div`
   }
 `;
 
+const BookSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Required'),
+  phone: Yup.string()
+    .phone('PL', false, 'Invalid phone')
+    .required('Required'),
+  catName: Yup.string()
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Required'),
+  email: Yup.string().email('Invalid email').required('Required'),
+  dateFrom: Yup.date().required('Required'),
+  dateTo: Yup.date().required('Required'),
+});
+
 const BookForm = () => {
   const history = useHistory();
   const handleClick = () => {
@@ -120,42 +153,78 @@ const BookForm = () => {
           dateFrom: new Date(),
           dateTo: new Date(),
         }}
+        validationSchema={BookSchema}
         onSubmit={(values) => handleClick(values)}
       >
-        {({ values, setFieldValue, handleChange }) => (
+        {({
+          values, setFieldValue, handleChange, errors, touched,
+        }) => (
           <StyledForm>
-            <StyledInput
-              onChange={handleChange}
-              value={values.name}
-              id="name"
-              name="name"
-              placeholder="Your name"
-            />
-            <StyledInput
-              onChange={handleChange}
-              value={values.catName}
-              id="catName"
-              name="catName"
-              placeholder="Cats name"
-            />
-            <StyledInput
-              onChange={handleChange}
-              value={values.phone}
-              id="phone"
-              name="phone"
-              placeholder="Phone number"
-            />
-            <StyledInput
-              onChange={handleChange}
-              value={values.email}
-              id="email"
-              placeholder="Email"
-            />
-            <StyledSmallHeading small>Arrival date</StyledSmallHeading>
             <StyledLabel>
+              {errors.name && touched.name ? (
+                <StyledError>{errors.name}</StyledError>
+              ) : null}
+              <StyledInput
+                error={errors.name}
+                onChange={handleChange}
+                value={values.name}
+                id="name"
+                name="name"
+                placeholder="Your name"
+              />
+            </StyledLabel>
+
+            <StyledLabel>
+              {errors.catName && touched.catName ? (
+                <StyledError>{errors.catName}</StyledError>
+              ) : null}
+              <StyledInput
+                error={errors.catName}
+                onChange={handleChange}
+                value={values.catName}
+                id="catName"
+                name="catName"
+                placeholder="Cats name"
+              />
+            </StyledLabel>
+
+            <StyledLabel>
+              {errors.phone && touched.phone ? (
+                <StyledError>{errors.phone}</StyledError>
+              ) : null}
+              <StyledInput
+                error={errors.phone}
+                onChange={handleChange}
+                value={values.phone}
+                id="phone"
+                name="phone"
+                placeholder="Phone number"
+              />
+            </StyledLabel>
+
+            <StyledLabel>
+              {errors.email && touched.email ? (
+                <StyledError>{errors.email}</StyledError>
+              ) : null}
+              <StyledInput
+                error={errors.email}
+                onChange={handleChange}
+                value={values.email}
+                id="email"
+                name="email"
+                placeholder="Email"
+              />
+            </StyledLabel>
+
+            <StyledSmallHeading small>Arrival date</StyledSmallHeading>
+            <StyledDateLabel>
               <StyledParagraph>Check-in</StyledParagraph>
+              {errors.dateFrom && touched.dateFrom ? (
+                <StyledError>{errors.dateFrom}</StyledError>
+              ) : null}
               <StyledInput
                 as={StyledDatePicker}
+                error={errors.dateFrom}
                 minDate={today}
                 locale="en-EN"
                 clearIcon={null}
@@ -168,25 +237,29 @@ const BookForm = () => {
                   setFieldValue('dateFrom', e);
                 }}
               />
-            </StyledLabel>
+            </StyledDateLabel>
 
-            <StyledLabel>
+            <StyledDateLabel>
+              {errors.dateTo && touched.dateTo ? (
+                <StyledError>{errors.dateTo}</StyledError>
+              ) : null}
               <StyledParagraph>Check-out</StyledParagraph>
               <StyledInput
                 as={StyledDatePicker}
+                error={errors.dateTo}
                 locale="en-EN"
-                minDate={values.dateFrom}
+                minDate={values.dateTo}
                 clearIcon={null}
                 calendarIcon={null}
                 format="dd-MM-y"
-                id="dateFrom"
-                name="dateFrom"
+                id="dateTo"
+                name="dateTo"
                 value={values.dateTo}
                 onChange={(e) => {
                   setFieldValue('dateTo', e);
                 }}
               />
-            </StyledLabel>
+            </StyledDateLabel>
 
             <StyledButtonIcon type="submit">Reserve</StyledButtonIcon>
           </StyledForm>

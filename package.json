@@ -1,6 +1,6 @@
 {
   "name": "hotel-cats",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
@@ -22,7 +22,9 @@
     "react-router-hash-link": "^2.3.1",
     "react-scripts": "4.0.1",
     "styled-components": "^5.2.1",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "yup": "^0.32.8",
+    "yup-phone": "^1.2.19"
   },
   "scripts": {
     "start": "react-scripts start",
