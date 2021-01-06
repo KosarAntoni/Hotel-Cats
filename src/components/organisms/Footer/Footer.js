@@ -72,21 +72,28 @@ const Footer = () => (
   <>
     <Wrapper>
       <ContentContainer>
-        <Logo as={HashLink} to="/#" />
+        <Logo
+          smooth
+          as={HashLink}
+          to="/#"
+        />
         <LinksContainer>
           <StyledLink
+            smooth
             as={HashLink}
             to="/home#whyus"
           >
             Why us?
           </StyledLink>
           <StyledLink
+            smooth
             as={HashLink}
             to="/catalog#"
           >
             Rooms
           </StyledLink>
           <StyledLink
+            smooth
             as={HashLink}
             to={{
               pathname: '/home',
@@ -96,6 +103,7 @@ const Footer = () => (
             Testimonials
           </StyledLink>
           <StyledLink
+            smooth
             as={HashLink}
             to="#contact"
           >

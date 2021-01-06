@@ -28,7 +28,6 @@ const Background = styled(motion.div)`
 	right: 0;
 	bottom: 0;
   background: ${({ theme }) => theme.background};
-  backdrop-filter: blur(8px);
 `;
 
 const Container = styled(motion.div)`

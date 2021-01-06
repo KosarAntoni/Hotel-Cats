@@ -146,25 +146,37 @@ const Header = () => {
       </BackgroundContainer>
 
       <ContentContainer isMenuOpen={isMenuOpen}>
-        <StyledLogo as={HashLink} to="/#" />
+        <StyledLogo
+          as={HashLink}
+          to="/#"
+          smooth
+        />
 
         <WideScreenNavContainer>
           <StyledWideScreenLink
             as={HashLink}
             to="/home#whyus"
+            smooth
           >
             Why us?
           </StyledWideScreenLink>
-          <StyledWideScreenLink as={HashLink} to="/catalog#">Rooms</StyledWideScreenLink>
+          <StyledWideScreenLink
+            as={HashLink}
+            to="/catalog#"
+          >
+            Rooms
+          </StyledWideScreenLink>
           <StyledWideScreenLink
             as={HashLink}
             to="/home#testimonials"
+            smooth
           >
             Testimonials
           </StyledWideScreenLink>
           <StyledWideScreenLink
             as={HashLink}
             to="#contact"
+            smooth
           >
             Find us
           </StyledWideScreenLink>
@@ -189,6 +201,7 @@ const Header = () => {
           }}
         >
           <StyledLink
+            smooth
             as={HashLink}
             to="/home#whyus"
             big
@@ -196,6 +209,7 @@ const Header = () => {
             Why us?
           </StyledLink>
           <StyledLink
+            smooth
             as={HashLink}
             to="/catalog#"
             big
@@ -203,6 +217,7 @@ const Header = () => {
             Rooms
           </StyledLink>
           <StyledLink
+            smooth
             as={HashLink}
             to="/home#testimonials"
             big
@@ -210,6 +225,7 @@ const Header = () => {
             Testimonials
           </StyledLink>
           <StyledLink
+            smooth
             as={HashLink}
             to="#contact"
             big

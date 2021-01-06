@@ -34,19 +34,6 @@ const StyledInput = styled(Input)`
   }
 `;
 
-const StyledDateInput = styled(Input)`
-  width: 49%;
-`;
-
-const StyledParagraph = styled(Paragraph)`
-  width: 100%;
-  margin-bottom: 0.5rem;
-  
-  @media screen and ${({ theme }) => theme.viewPorts.viewport7} {
-    margin-bottom: 1.5rem;
-  }
-`;
-
 const StyledHeading = styled(Heading)`
   margin: 0 auto 3rem;
 
@@ -55,12 +42,31 @@ const StyledHeading = styled(Heading)`
   }
 `;
 
+const StyledSmallHeading = styled(Heading)`
+  text-align: center;
+  width: 100%;
+  margin: 0 auto 1rem;
+`;
+
+const StyledParagraph = styled(Paragraph)`
+  margin-bottom: 0.5rem;
+`;
+
 const StyledButtonIcon = styled(ButtonIcon)`
   margin: 3rem auto 0;
 
   @media screen and ${({ theme }) => theme.viewPorts.viewport7} {
     margin-top: 4rem;
   }
+`;
+
+const StyledLabel = styled.label`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  width: 48%;
+  font-size: ${({ theme }) => theme.fontSize.s};
 `;
 
 const Background = styled.div`
@@ -116,39 +122,72 @@ const BookForm = () => {
         }}
         onSubmit={(values) => handleClick(values)}
       >
-        {({ values, setFieldValue }) => (
+        {({ values, setFieldValue, handleChange }) => (
           <StyledForm>
-            <StyledInput value={values.name} id="name" name="name" placeholder="Your name" />
-            <StyledInput value={values.catName} id="catName" name="catName" placeholder="Cats name" />
-            <StyledInput value={values.phone} id="phone" name="phone" placeholder="Phone number" />
-            <StyledInput value={values.email} id="email" placeholder="Email" />
-            <StyledParagraph>Arrival date</StyledParagraph>
-            <StyledDateInput
-              as={StyledDatePicker}
-              minDate={today}
-              locale="en-EN"
-              clearIcon={null}
-              format="dd-MM-y"
-              id="dateFrom"
-              name="dateFrom"
-              value={values.dateFrom}
-              onChange={(e) => {
-                setFieldValue('dateFrom', e);
-              }}
+            <StyledInput
+              onChange={handleChange}
+              value={values.name}
+              id="name"
+              name="name"
+              placeholder="Your name"
             />
-            <StyledDateInput
-              as={StyledDatePicker}
-              locale="en-EN"
-              minDate={values.dateFrom}
-              clearIcon={null}
-              format="dd-MM-y"
-              id="dateFrom"
-              name="dateFrom"
-              value={values.dateTo}
-              onChange={(e) => {
-                setFieldValue('dateTo', e);
-              }}
+            <StyledInput
+              onChange={handleChange}
+              value={values.catName}
+              id="catName"
+              name="catName"
+              placeholder="Cats name"
             />
+            <StyledInput
+              onChange={handleChange}
+              value={values.phone}
+              id="phone"
+              name="phone"
+              placeholder="Phone number"
+            />
+            <StyledInput
+              onChange={handleChange}
+              value={values.email}
+              id="email"
+              placeholder="Email"
+            />
+            <StyledSmallHeading small>Arrival date</StyledSmallHeading>
+            <StyledLabel>
+              <StyledParagraph>Check-in</StyledParagraph>
+              <StyledInput
+                as={StyledDatePicker}
+                minDate={today}
+                locale="en-EN"
+                clearIcon={null}
+                calendarIcon={null}
+                format="dd-MM-y"
+                id="dateFrom"
+                name="dateFrom"
+                value={values.dateFrom}
+                onChange={(e) => {
+                  setFieldValue('dateFrom', e);
+                }}
+              />
+            </StyledLabel>
+
+            <StyledLabel>
+              <StyledParagraph>Check-out</StyledParagraph>
+              <StyledInput
+                as={StyledDatePicker}
+                locale="en-EN"
+                minDate={values.dateFrom}
+                clearIcon={null}
+                calendarIcon={null}
+                format="dd-MM-y"
+                id="dateFrom"
+                name="dateFrom"
+                value={values.dateTo}
+                onChange={(e) => {
+                  setFieldValue('dateTo', e);
+                }}
+              />
+            </StyledLabel>
+
             <StyledButtonIcon type="submit">Reserve</StyledButtonIcon>
           </StyledForm>
         )}

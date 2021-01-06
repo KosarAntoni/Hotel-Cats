@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import DatePicker from 'react-date-picker';
 
 const StyledDatePicker = styled(DatePicker)`
-  padding: 1rem;
   display: flex;
   justify-content: center;
 
