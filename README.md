@@ -14,7 +14,9 @@
 * Storybook
 * Atomic design
 * React Router
+* React Loadable
 * Framer motion
+* Formik & Yup & React-Date-Picker
 
 ## Live
 #### [Link to live](https://kitten-hotel4cats.netlify.app/) <br/>

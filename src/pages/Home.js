@@ -13,6 +13,8 @@ import TestimonialsCarouselTemplate from '../templates/TestimonialsCarouselTempl
 import RoomsCarouselTemplate from '../templates/RoomsCarouselTemplate';
 import CarouselRoomCard from '../components/molecules/CarouselRoomCard/CarouselRoomCard';
 import { Testimonials, Rooms } from '../data/data';
+import Contacts from '../components/organisms/Contacts/Contacts';
+import Footer from '../components/organisms/Footer/Footer';
 
 const Home = () => (
   <>
@@ -80,6 +82,9 @@ const Home = () => (
         />
       ))}
     </TestimonialsCarouselTemplate>
+
+    <Contacts />
+    <Footer />
   </>
 );
 export default Home;

@@ -5,8 +5,6 @@ import { useLocation, useHistory } from 'react-router-dom';
 import { themeLight, themeDark } from '../theme/mainTheme';
 import GlobalStyle from '../theme/GlobalStyle';
 import Header from '../components/organisms/Header/Header';
-import Footer from '../components/organisms/Footer/Footer';
-import Contacts from '../components/organisms/Contacts/Contacts';
 import Modal from '../components/organisms/Modal/Modal';
 import BookForm from '../components/organisms/BookForm/BookForm';
 import BookSuccess from '../components/molecules/BookSuccess/BookSuccess';
@@ -35,9 +33,9 @@ const MainTemplate = ({ children }) => {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Header />
+
       {children}
-      <Contacts />
-      <Footer />
+
       <Modal
         handleClose={() => history.push(`${location.pathname}${location.hash}`)}
         isShown={location.search === '?book'}

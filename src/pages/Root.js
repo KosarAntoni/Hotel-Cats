@@ -2,10 +2,48 @@ import React from 'react';
 import {
   BrowserRouter, Switch, Route, Redirect,
 } from 'react-router-dom';
+import Loadable from 'react-loadable';
+import styled from 'styled-components';
 import MainTemplate from '../templates/MainTemplate';
-import Home from './Home';
-import Room from './Room';
-import RoomsCatalog from './RoomsCatalog';
+import Loader from '../components/atoms/Loader/Loader';
+
+const LoaderContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+`;
+
+// eslint-disable-next-line react/prop-types
+function Loading({ error }) {
+  if (error) {
+    return 'Oh nooess!';
+  }
+  return (
+    <LoaderContainer>
+      <Loader />
+    </LoaderContainer>
+  );
+}
+
+const Home = Loadable({
+  loader: () => import('./Home'),
+  loading: Loading,
+});
+
+const Room = Loadable({
+  loader: () => import('./Room'),
+  loading: Loading,
+});
+
+const RoomsCatalog = Loadable({
+  loader: () => import('./RoomsCatalog'),
+  loading: Loading,
+});
 
 const Root = () => (
   <BrowserRouter>

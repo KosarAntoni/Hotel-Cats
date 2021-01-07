@@ -4,6 +4,8 @@ import RoomsCarouselTemplate from '../templates/RoomsCarouselTemplate';
 import CarouselRoomCard from '../components/molecules/CarouselRoomCard/CarouselRoomCard';
 import RoomInfoTemplate from '../templates/RoomInfoTemplate';
 import { Rooms } from '../data/data';
+import Contacts from '../components/organisms/Contacts/Contacts';
+import Footer from '../components/organisms/Footer/Footer';
 
 const Room = ({ match }) => {
   const { id } = match.params;
@@ -38,6 +40,9 @@ const Room = ({ match }) => {
         ))}
 
       </RoomsCarouselTemplate>
+
+      <Contacts />
+      <Footer />
     </>
   );
 };
