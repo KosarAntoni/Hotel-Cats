@@ -27,7 +27,7 @@
 * Content filter
 
 ## Status
-Project is: _in progress_.
+Project is: _finished_.
 
 ## Contact
 Created by [Anton Kosar](https://www.linkedin.com/in/anton-kosar-51a33617a/) - feel free to contact me!

@@ -18,17 +18,11 @@ const LoaderContainer = styled.div`
   height: 100%;
 `;
 
-// eslint-disable-next-line react/prop-types
-function Loading({ error }) {
-  if (error) {
-    return 'Oh nooess!';
-  }
-  return (
-    <LoaderContainer>
-      <Loader />
-    </LoaderContainer>
-  );
-}
+const Loading = () => (
+  <LoaderContainer>
+    <Loader />
+  </LoaderContainer>
+);
 
 const Home = Loadable({
   loader: () => import('./Home'),

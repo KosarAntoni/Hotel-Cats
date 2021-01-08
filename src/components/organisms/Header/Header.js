@@ -205,6 +205,7 @@ const Header = () => {
             as={HashLink}
             to="/home#whyus"
             big
+            onClick={() => setIsMenuOpen(false)}
           >
             Why us?
           </StyledLink>
@@ -213,6 +214,7 @@ const Header = () => {
             as={HashLink}
             to="/catalog#"
             big
+            onClick={() => setIsMenuOpen(false)}
           >
             Rooms
           </StyledLink>
@@ -221,6 +223,7 @@ const Header = () => {
             as={HashLink}
             to="/home#testimonials"
             big
+            onClick={() => setIsMenuOpen(false)}
           >
             Testimonials
           </StyledLink>
@@ -229,6 +232,7 @@ const Header = () => {
             as={HashLink}
             to="#contact"
             big
+            onClick={() => setIsMenuOpen(false)}
           >
             Find us
           </StyledLink>
