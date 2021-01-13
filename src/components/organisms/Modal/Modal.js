@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
@@ -60,48 +60,68 @@ const CloseButtonWrapper = styled.div`
   }
 `;
 
-const Modal = ({ children, isShown, handleClose }) => (
-  <Wrapper
-    initial={{ opacity: 0, visibility: 'hidden' }}
-    animate={isShown ? { opacity: 1, visibility: 'visible' } : { opacity: 0, visibility: 'hidden' }}
-    transition={!isShown && {
-      delay: 0.4,
-    }}
-  >
-    <Background
-      initial={{ opacity: 0 }}
-      animate={isShown ? { opacity: 0.8 } : { opacity: 0 }}
-      transition={isShown ? {
-        type: 'spring',
-        stiffness: 400,
-        damping: 40,
-      } : {
-        type: 'spring',
-        stiffness: 400,
-        damping: 40,
-      }}
-      onClick={() => handleClose()}
-    />
-    <Container
-      initial={{ opacity: 0, y: '10%' }}
-      animate={isShown ? { opacity: 1, y: '0%' } : { opacity: 0, y: '10%' }}
-      transition={isShown ? {
-        type: 'spring',
-        stiffness: 400,
-        damping: 40,
-      } : {
-        type: 'spring',
-        stiffness: 400,
-        damping: 40,
+const Modal = ({ children, isShown, handleClose }) => {
+  useEffect(() => {
+    if (isShown) {
+      const { scrollY } = window;
+
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+    }
+  });
+
+  const handleCloseClick = () => {
+    handleClose();
+    const scrollY = parseInt(document.body.style.top, 10);
+
+    document.body.style.position = '';
+    document.body.style.top = '';
+    window.scrollTo(0, -(scrollY || 0));
+  };
+
+  return (
+    <Wrapper
+      initial={{ opacity: 0, visibility: 'hidden' }}
+      animate={isShown ? { opacity: 1, visibility: 'visible' } : { opacity: 0, visibility: 'hidden' }}
+      transition={!isShown && {
+        delay: 0.4,
       }}
     >
-      <CloseButtonWrapper onClick={() => handleClose()}>
-        <MenuToggle isOpen />
-      </CloseButtonWrapper>
-      {children}
-    </Container>
-  </Wrapper>
-);
+      <Background
+        initial={{ opacity: 0 }}
+        animate={isShown ? { opacity: 0.8 } : { opacity: 0 }}
+        transition={isShown ? {
+          type: 'spring',
+          stiffness: 400,
+          damping: 40,
+        } : {
+          type: 'spring',
+          stiffness: 400,
+          damping: 40,
+        }}
+        onClick={() => handleCloseClick()}
+      />
+      <Container
+        initial={{ opacity: 0, y: '10%' }}
+        animate={isShown ? { opacity: 1, y: '0%' } : { opacity: 0, y: '10%' }}
+        transition={isShown ? {
+          type: 'spring',
+          stiffness: 400,
+          damping: 40,
+        } : {
+          type: 'spring',
+          stiffness: 400,
+          damping: 40,
+        }}
+      >
+        <CloseButtonWrapper onClick={() => handleCloseClick()}>
+          <MenuToggle isOpen />
+        </CloseButtonWrapper>
+        {children}
+      </Container>
+    </Wrapper>
+  );
+};
 
 Modal.propTypes = {
   children: PropTypes.oneOfType(
